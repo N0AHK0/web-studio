@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fern &amp; Fringe Hair Studio — Cuts, Colour &amp; Keratin | Demo</title>
+<meta name="description" content="Hair salon website demo: price list, stylist profiles, reviews and booking call-to-action. Portfolio template by Noah Kepa-Allen Web Studio, North Shore Auckland.">
+<meta property="og:title" content="Fern &amp; Fringe Hair Studio — Demo Build">
+<meta property="og:description" content="Salon website template — prices, team, reviews and booking.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<style>
+  :root {
+    --noir: #1c1720;
+    --plum: #3d2233;
+    --blush: #e8c4c9;
+    --rose: #b96a7c;
+    --cream: #faf5f2;
+    --sand: #f0e6e0;
+    --ink: #2a2126;
+    --muted: #83727b;
+    --gold: #c9a06a;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { font-family:'Segoe UI', system-ui, sans-serif; background:var(--cream); color:var(--ink); line-height:1.6; }
+  .wrap { width:min(1060px,92%); margin:0 auto; }
+  h1,h2,h3 { font-family:Georgia, serif; color:var(--noir); line-height:1.15; }
+
+  .announce { background:var(--noir); color:#f2e6ea; text-align:center; font-size:.82rem; letter-spacing:.14em; text-transform:uppercase; padding:9px 14px; }
+  header.site { position:sticky; top:0; z-index:40; background:rgba(250,245,242,.96); backdrop-filter:blur(6px); border-bottom:1px solid rgba(28,23,32,.12); }
+  .nav { display:flex; align-items:center; justify-content:space-between; padding:15px 0; }
+  .brand { font-family:Georgia,serif; font-size:1.35rem; color:var(--noir); text-decoration:none; }
+  .brand i { font-style:normal; color:var(--rose); }
+  nav.links { display:flex; gap:26px; }
+  nav.links a { color:var(--ink); text-decoration:none; font-weight:600; font-size:.92rem; opacity:.85; }
+  nav.links a:hover { opacity:1; }
+  .btn { display:inline-block; background:var(--rose); color:#fff; text-decoration:none; font-weight:700; padding:13px 30px; border-radius:999px; transition:.15s; border:none; cursor:pointer; box-shadow:0 8px 18px rgba(185,106,124,.35); font-size:.97rem; }
+  .btn:hover { filter:brightness(.93); transform:translateY(-2px); }
+  .btn.dark { background:var(--noir); box-shadow:none; }
+
+  .hero { padding:80px 0 64px; background:linear-gradient(160deg,var(--blush),var(--sand) 60%,var(--cream)); }
+  .hero-grid { display:grid; grid-template-columns:1fr .85fr; gap:52px; align-items:center; }
+  .kicker { color:var(--rose); font-weight:800; text-transform:uppercase; letter-spacing:.2em; font-size:.76rem; margin-bottom:14px; }
+  h1 { font-size:clamp(2.2rem,4.6vw,3.4rem); margin-bottom:18px; }
+  .lede { color:var(--muted); font-size:1.05rem; max-width:31em; margin-bottom:28px; }
+  .cta-row { display:flex; gap:14px; flex-wrap:wrap; align-items:center; margin-bottom:20px; }
+  .note { font-size:.86rem; color:var(--muted); }
+  .hero-art { border-radius:50% 50% 46% 54% / 55% 48% 52% 45%; min-height:360px; background:
+      radial-gradient(circle at 30% 25%, #f7dde2, transparent 50%),
+      linear-gradient(140deg,#caa0aa,#8d5468 55%,#3d2233);
+      box-shadow:0 20px 44px rgba(61,34,51,.25); display:grid; place-items:center; font-size:4rem; }
+
+  section { padding:66px 0; }
+  .head { text-align:center; max-width:42em; margin:0 auto 42px; }
+  .head h2 { font-size:clamp(1.75rem,3vw,2.3rem); margin-bottom:10px; }
+  .head p { color:var(--muted); }
+
+  .pricelist { max-width:760px; margin:0 auto; background:#fff; border-radius:18px; box-shadow:0 10px 28px rgba(28,23,32,.09); overflow:hidden; }
+  .cat { padding:26px 34px 8px; font-family:Georgia,serif; font-size:1.25rem; color:var(--rose); }
+  .row { display:flex; justify-content:space-between; gap:18px; padding:13px 34px; border-bottom:1px solid rgba(28,23,32,.07); font-size:.97rem; }
+  .row:last-child { border-bottom:none; }
+  .row span b { color:var(--noir); font-weight:600; }
+  .row small { display:block; color:var(--muted); font-size:.84rem; }
+  .amt { font-weight:800; color:var(--noir); white-space:nowrap; }
+
+  .team { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+  .member { text-align:center; }
+  .avatar-lg { width:120px; height:120px; margin:0 auto 16px; border-radius:50%; display:grid; place-items:center; font-size:2.6rem; box-shadow:inset -6px -8px 14px rgba(0,0,0,.18), 0 10px 24px rgba(61,34,51,.2); }
+  .m1 { background:linear-gradient(140deg,#d8aab4,#8d5468); }
+  .m2 { background:linear-gradient(140deg,#b98da0,#4a2b3c); }
+  .m3 { background:linear-gradient(140deg,#caa77f,#6d4a33); }
+  .member h3 { font-size:1.1rem; margin-bottom:4px; }
+  .member p { color:var(--muted); font-size:.9rem; max-width:24em; margin:0 auto; }
+
+  .reviews { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+  .rev { background:#fff; border-radius:14px; padding:26px; box-shadow:0 8px 22px rgba(28,23,32,.08); font-size:.93rem; color:var(--muted); }
+  .rev .stars { color:var(--gold); letter-spacing:2px; margin-bottom:10px; }
+  .rev b { color:var(--noir); display:block; margin-bottom:6px; }
+
+  .book-band { background:var(--noir); color:#f2e6ea; text-align:center; padding:58px 0; }
+  .book-band h2 { color:#fff; margin-bottom:12px; font-size:clamp(1.6rem,3vw,2.1rem); }
+  .book-band p { color:#cbb6bf; margin-bottom:24px; }
+  .hours-inline { font-size:.9rem; color:#cbb6bf; margin-top:22px; }
+  .hours-inline b { color:#fff; }
+
+  footer { padding:34px 0; font-size:.82rem; color:var(--muted); text-align:center; }
+  @media(max-width:880px){ nav.links{display:none;} .hero-grid{grid-template-columns:1fr;} .team,.reviews{grid-template-columns:1fr;} }
+</style>
+</head>
+<body>
+
+<div class="announce">Now taking spring bookings · Open Tue – Sat · 09 555 0177</div>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="#">Fern <i>&amp;</i> Fringe</a>
+    <nav class="links"><a href="#prices">Prices</a><a href="#team">The Team</a><a href="#reviews">Reviews</a><a href="#book">Book Now</a></nav>
+    <a class="btn" href="#book" style="padding:11px 22px;font-size:.9rem;">Book Online</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="kicker">Cuts · Colour · Keratin · Ponsonby</p>
+      <h1>Good hair days, on appointment.</h1>
+      <p class="lede">A small studio where one stylist sees you start to finish — no being passed around the floor, no upsell script at the basin.</p>
+      <div class="cta-row">
+        <a class="btn" href="#book">Book Your Appointment</a>
+        <span class="note">New clients get a free 10-min consult first</span>
+      </div>
+    </div>
+    <div class="hero-art">✂️</div>
+  </div>
+</section>
+
+<section id="prices" style="background:#fff;">
+  <div class="wrap">
+    <div class="head"><h2>The Price List</h2><p>Sample pricing shown in this demo — every service includes a wash, blow-wave and honest advice.</p></div>
+    <div class="pricelist">
+      <p class="cat">Cut &amp; Style</p>
+      <div class="row"><span><b>Ladies' cut &amp; style</b><small>Includes consultation &amp; finish</small></span><span class="amt">$85</span></div>
+      <div class="row"><span><b>Men's cut</b><small>Clipper or scissor finish</small></span><span class="amt">$45</span></div>
+      <div class="row"><span><b>Fringe trim</b><small>Free between visits for regulars</small></span><span class="amt">$15</span></div>
+      <p class="cat">Colour</p>
+      <div class="row"><span><b>Root touch-up</b><small>Regrowth colour, single tone</small></span><span class="amt">$110</span></div>
+      <div class="row"><span><b>Full head foils</b><small>Including toner &amp; treatment</small></span><span class="amt">$210+</span></div>
+      <div class="row"><span><b>Balayage / lived-in colour</b><small>Hand-painted, low maintenance</small></span><span class="amt">$240+</span></div>
+      <p class="cat">Treatments</p>
+      <div class="row"><span><b>Keratin smoothing</b><small>Frizz control lasting 3–4 months</small></span><span class="amt">$280</span></div>
+      <div class="row"><span><b>Olaplex bond treatment</b><small>Add to any service</small></span><span class="amt">$40</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="team">
+  <div class="wrap">
+    <div class="head"><h2>Who You'll Meet</h2><p>Stylist profiles are placeholders in this demo build.</p></div>
+    <div class="team">
+      <div class="member"><div class="avatar-lg m1">👩‍🦰</div><h3>Marama</h3><p>Owner &amp; senior stylist — 12 years behind the chair, balayage specialist, will absolutely talk you out of a fringe you'll regret.</p></div>
+      <div class="member"><div class="avatar-lg m2">💇‍♀️</div><h3>Sasha</h3><p>Colour technician — vivid colours and corrections. If it's been bleached within an inch of its life, she's your person.</p></div>
+      <div class="member"><div class="avatar-lg m3">🧑‍🦱</div><h3>Tane</h3><p>Barbering &amp; men's styling — skin fades, beards, and the occasional very serious conversation about hair pomade.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="reviews" style="background:#fff;">
+  <div class="wrap">
+    <div class="head"><h2>From The Chair</h2><p>Sample reviews shown for layout purposes only.</p></div>
+    <div class="reviews">
+      <div class="rev"><div class="stars">★★★★★</div><b>"Finally, a salon that listens"</b>"Showed a photo expecting 'we can't do that' — walked out with exactly that. Booking my next three appointments already."</div>
+      <div class="rev"><div class="stars">★★★★★</div><b>"Colour correction wizards"</b>"Box-dye disaster from lockdown fixed in one sitting. Sasha talked me through every step so there were no surprises."</div>
+      <div class="rev"><div class="stars">★★★★☆</div><b>"Worth the wait"</b>"They book out ~2 weeks ahead now, which tells you everything. Fades are consistently sharp."</div>
+    </div>
+  </div>
+</section>
+
+<div class="book-band" id="book">
+  <div class="wrap">
+    <h2>Ready for a good hair day?</h2>
+    <p>Book online in 30 seconds, or ring the studio and we'll fit you in.</p>
+    <a class="btn dark" style="background:#fff;color:var(--noir);" href="#">Book Online</a>
+    <a class="btn" style="margin-left:10px;" href="tel:095550177">Call 09 555 0177</a>
+    <p class="hours-inline"><b>Hours:</b> Tue–Fri 9am–6pm · Sat 9am–3pm · Closed Sun &amp; Mon<br>Studio 4, 88 Ponsonby Road (fictional address — demo site)</p>
+  </div>
+</div>
+
+<footer>
+  © 2026 Fern &amp; Fringe Hair Studio — demo template built as portfolio proof-of-work. Not a real salon.
+</footer>
+
+</body>
+</html>
+

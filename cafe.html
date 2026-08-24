@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rata &amp; Co. — Neighbourhood Coffee &amp; Brunch | Demo</title>
+<meta name="description" content="Neighbourhood café website demo: menu, opening hours, location and gallery. Portfolio template by Noah Kepa-Allen Web Studio, North Shore Auckland.">
+<meta property="og:title" content="Rata &amp; Co. Coffee — Demo Build">
+<meta property="og:description" content="Café website template — menu, hours, location and reviews.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<style>
+  :root {
+    --espresso: #2b1d16;
+    --roast: #4a3226;
+    --caramel: #c68a53;
+    --cream: #faf3e7;
+    --paper: #f1e5d0;
+    --berry: #9e2b25;
+    --ink: #2b241d;
+    --muted: #7d6f5f;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { font-family:'Segoe UI', system-ui, sans-serif; background:var(--cream); color:var(--ink); line-height:1.6; }
+  .wrap { width:min(1080px,92%); margin:0 auto; }
+  h1,h2,h3 { font-family:Georgia, serif; color:var(--espresso); line-height:1.15; }
+
+  header.site { position:sticky; top:0; z-index:40; background:rgba(250,243,231,.96); backdrop-filter:blur(6px); border-bottom:1px solid rgba(43,29,22,.12); }
+  .nav { display:flex; align-items:center; justify-content:space-between; padding:14px 0; }
+  .brand { font-family:Georgia,serif; font-size:1.45rem; color:var(--espresso); text-decoration:none; display:flex; align-items:center; gap:10px; }
+  .brand span.dot { width:12px; height:12px; border-radius:50%; background:var(--berry); display:inline-block; }
+  nav.links { display:flex; gap:26px; }
+  nav.links a { text-decoration:none; color:var(--ink); font-weight:600; font-size:.93rem; opacity:.85; }
+  nav.links a:hover { opacity:1; }
+
+  .hero { position:relative; padding:90px 0 70px; background:linear-gradient(rgba(43,29,22,.55), rgba(43,29,22,.65)), linear-gradient(120deg,#6b4423,#8a5a33 40%,#3a2718); text-align:center; color:#fff; }
+  .hero h1 { color:#fff; font-size:clamp(2.3rem,5vw,3.6rem); margin-bottom:14px; }
+  .hero p { max-width:34em; margin:0 auto 28px; color:#f3e7d7; font-size:1.05rem; }
+  .btn { display:inline-block; background:var(--berry); color:#fff; padding:14px 32px; border-radius:999px; text-decoration:none; font-weight:700; transition:.15s; box-shadow:0 8px 20px rgba(158,43,37,.4); border:none; cursor:pointer; font-size:1rem; }
+  .btn:hover { filter:brightness(.92); transform:translateY(-2px); }
+  .btn.light { background:#fff; color:var(--espresso); box-shadow:0 8px 20px rgba(0,0,0,.25); }
+  .open-badge { display:inline-block; background:rgba(255,255,255,.15); border:1px solid rgba(255,255,255,.4); border-radius:999px; padding:7px 18px; font-size:.85rem; margin-bottom:20px; letter-spacing:.06em; }
+
+  section { padding:66px 0; }
+  .head { text-align:center; max-width:42em; margin:0 auto 40px; }
+  .head h2 { font-size:clamp(1.75rem,3vw,2.35rem); margin-bottom:10px; }
+  .head p { color:var(--muted); }
+
+  .menu-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:16px 40px; max-width:860px; margin:0 auto; }
+  .item { display:flex; justify-content:space-between; gap:16px; border-bottom:1px dashed rgba(43,29,22,.25); padding-bottom:12px; }
+  .item b { font-family:Georgia,serif; font-size:1.02rem; color:var(--espresso); }
+  .item small { display:block; color:var(--muted); font-size:.86rem; }
+  .price { font-weight:800; color:var(--berry); white-space:nowrap; }
+
+  .info-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+  .info-card { background:#fff; border-radius:16px; padding:30px 26px; box-shadow:0 8px 22px rgba(43,29,22,.09); }
+  .info-card h3 { margin-bottom:12px; font-size:1.15rem; }
+  .hours td { padding:5px 0; font-size:.94rem; }
+  .hours td:last-child { text-align:right; font-weight:700; color:var(--espresso); }
+  .info-card p { color:var(--muted); font-size:.94rem; }
+
+  .strip { background:var(--espresso); color:#f3e7d7; padding:34px 0; text-align:center; }
+  .strip b { color:#fff; font-family:Georgia,serif; font-size:1.3rem; letter-spacing:.02em; }
+
+  .gallery { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; }
+  .shot { height:170px; border-radius:12px; position:relative; overflow:hidden; box-shadow:0 8px 18px rgba(43,29,22,.14); }
+  .g1 { background:linear-gradient(150deg,#d9a05f,#8a5a33 60%,#3a2718); }
+  .g2 { background:linear-gradient(160deg,#efe0c8,#cfa06a 55%,#6b4423); }
+  .g3 { background:linear-gradient(130deg,#b46a5a,#7e3530 55%,#3c1714); }
+  .g4 { background:linear-gradient(200deg,#e8d5b5,#a97c48 60%,#503317); }
+  .shot::after { content:"photo placeholder"; position:absolute; bottom:10px; left:12px; color:rgba(255,255,255,.85); font-size:.7rem; text-transform:uppercase; letter-spacing:.1em; }
+
+  .review-row { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+  .rev { background:#fff; border-radius:14px; padding:24px; box-shadow:0 8px 22px rgba(43,29,22,.08); font-size:.93rem; color:var(--muted); }
+  .rev b { color:var(--espresso); display:block; margin-bottom:6px; }
+  .stars { color:#d3a53c; margin-bottom:8px; letter-spacing:2px; }
+
+  footer { background:var(--roast); color:#e9dcc7; padding:40px 0 24px; font-size:.88rem; }
+  .foot-flex { display:flex; justify-content:space-between; flex-wrap:wrap; gap:16px; margin-bottom:18px; }
+  footer a { color:#fff; text-decoration:none; }
+  .fine { border-top:1px solid rgba(255,255,255,.15); padding-top:16px; font-size:.78rem; }
+
+  @media(max-width:880px){ nav.links{display:none;} .menu-grid{grid-template-columns:1fr;} .info-grid,.review-row{grid-template-columns:1fr;} .gallery{grid-template-columns:1fr 1fr;} }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="#"><span class="dot"></span> Rata &amp; Co.</a>
+    <nav class="links"><a href="#menu">Menu</a><a href="#visit">Hours &amp; Location</a><a href="#gallery">Inside</a></nav>
+    <a class="btn" href="#visit" style="padding:11px 22px;font-size:.9rem;">Find Us</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="open-badge">☕ Open today · Kitchen until 2:30pm</span>
+    <h1>Proper coffee. Proper food.<br>Poured by people who know your name.</h1>
+    <p>A small neighbourhood café doing the simple things properly — single-origin espresso, seasonal brunch, and bread baked down the road every morning.</p>
+    <a class="btn light" href="#menu">See The Menu</a>
+    <a class="btn" href="#visit" style="margin-left:10px;">Opening Hours</a>
+  </div>
+</section>
+
+<section id="menu" style="background:#fff;">
+  <div class="wrap">
+    <div class="head"><h2>This Week's Menu</h2><p>Sample menu shown in this demo — changes with the seasons and whatever's good at the market.</p></div>
+    <div class="menu-grid">
+      <div class="item"><div><b>Flat White</b><small>Double shot, silky milk, our house blend</small></div><span class="price">$5.00</span></div>
+      <div class="item"><div><b>Cold Brew Tonic</b><small>18-hr cold brew, citrus tonic, orange peel</small></div><span class="price">$7.50</span></div>
+      <div class="item"><div><b>Rātā Brekky Bowl</b><small>Kūmara hash, poached eggs, feta, herb salsa</small></div><span class="price">$19.00</span></div>
+      <div class="item"><div><b>Mushroom Toast</b><small>Sourdough, thyme mushrooms, whipped ricotta</small></div><span class="price">$17.50</span></div>
+      <div class="item"><div><b>Bacon &amp; Egg Bun</b><small>Brioche, smoked bacon, tomato relish</small></div><span class="price">$13.00</span></div>
+      <div class="item"><div><b>Date &amp; Walnut Loaf</b><small>Toasted, espresso butter</small></div><span class="price">$8.00</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="strip">Takeaway orders over the phone · <b>(09) 555 0144</b> · Dog-friendly courtyard ☕</div>
+
+<section id="visit">
+  <div class="wrap">
+    <div class="head"><h2>Hours &amp; Location</h2><p>Corner of Rata St &amp; Kōwhai Rd (fictional address for this demo).</p></div>
+    <div class="info-grid">
+      <div class="info-card">
+        <h3>🕒 Opening Hours</h3>
+        <table class="hours" style="width:100%;">
+          <tr><td>Monday – Friday</td><td>6:30am – 3pm</td></tr>
+          <tr><td>Saturday – Sunday</td><td>7:30am – 3pm</td></tr>
+          <tr><td>Public Holidays</td><td>Closed</td></tr>
+        </table>
+      </div>
+      <div class="info-card">
+        <h3>📍 Find Us</h3>
+        <p>142 Rata Street<br>Kingsland, Auckland 1021<br><br>Two minutes from the train station. Street parking out front, bike racks round the side.</p>
+      </div>
+      <div class="info-card">
+        <h3>💬 Get In Touch</h3>
+        <p>Phone: (09) 555 0144<br>Instagram: @rataandco.demo<br><br>Catering and coffee carts for events — flick us a message.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="gallery" style="background:#fff; padding-top:0;">
+  <div class="wrap">
+    <div class="head"><h2>The Vibe</h2></div>
+    <div class="gallery">
+      <div class="shot g1"></div><div class="shot g2"></div><div class="shot g3"></div><div class="shot g4"></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0;">
+  <div class="wrap">
+    <div class="head"><h2>What Regulars Say</h2><p>Sample reviews for layout purposes only.</p></div>
+    <div class="review-row">
+      <div class="rev"><div class="stars">★★★★★</div><b>"My office's second home"</b>"Best flat white within walking distance of Kingsland, and they remember everyone's order."</div>
+      <div class="rev"><div class="stars">★★★★★</div><b>"The brekky bowl!"</b>"I've ordered it six weekends running. My partner is sick of hearing about it."</div>
+      <div class="rev"><div class="stars">★★★★☆</div><b>"Busy at brunch o'clock"</b>"Worth the short wait on Saturdays — staff hustle and the coffee comes out fast."</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-flex">
+      <div><b style="color:#fff;">Rata &amp; Co. Coffee</b><br>Demo café website template — not a real business.</div>
+      <div><a href="#menu">Menu</a> · <a href="#visit">Visit</a> · <a href="#">Instagram</a> · <a href="#">Privacy</a></div>
+    </div>
+    <div class="fine">© 2026 Rata &amp; Co. — portfolio proof-of-work build.</div>
+  </div>
+</footer>
+
+</body>
+</html>
+
