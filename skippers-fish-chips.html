@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Skipper's Fish &amp; Chips — Browns Bay | Fresh Fish, Big Portions</title>
+<meta name="description" content="Fish & chips in Browns Bay, Auckland. Fresh fish daily, big portions, proper batter. Phone ahead for pickup — skip the queue. Open 7 days from 11am.">
+<meta property="og:title" content="Skipper's Fish &amp; Chips — Browns Bay">
+<meta property="og:description" content="Fresh fish daily, big portions, proper batter. Phone ahead, skip the queue.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<style>
+  :root {
+    --navy: #0f2d40;
+    --deep: #0a1f2e;
+    --teal: #2e8b8b;
+    --wrapper: #f6efdc;
+    --newsprint: #efe5c8;
+    --red: #d64541;
+    --gold: #e8b64c;
+    --ink: #22303a;
+    --muted: #6f7f8a;
+    --white: #fff;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { font-family:'Segoe UI', system-ui, sans-serif; background:var(--wrapper); color:var(--ink); line-height:1.6; }
+  .wrap { width:min(1040px,92%); margin:0 auto; }
+  h1,h2,h3 { font-family:Georgia, serif; color:var(--navy); line-height:1.15; }
+
+  .topbar { background:var(--red); color:#fff; text-align:center; font-size:.84rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; padding:9px 14px; }
+  header.site { position:sticky; top:0; z-index:40; background:rgba(246,239,220,.97); backdrop-filter:blur(6px); border-bottom:3px solid var(--navy); }
+  .nav { display:flex; align-items:center; justify-content:space-between; padding:13px 0; }
+  .brand { display:flex; align-items:center; gap:12px; text-decoration:none; }
+  .brand .badge { width:42px; height:42px; border-radius:50%; background:radial-gradient(circle at 35% 30%, #3fa0a0, var(--navy) 70%); display:grid; place-items:center; color:#fff; font-size:1.2rem; box-shadow:inset -3px -4px 8px rgba(0,0,0,.3); }
+  .brand b { font-family:Georgia,serif; font-size:1.3rem; color:var(--navy); display:block; line-height:1; }
+  .brand small { color:var(--red); font-size:.68rem; font-weight:800; letter-spacing:.2em; text-transform:uppercase; }
+  nav.links { display:flex; gap:24px; }
+  nav.links a { color:var(--ink); text-decoration:none; font-weight:600; font-size:.92rem; opacity:.85; }
+  nav.links a:hover { opacity:1; color:var(--teal); }
+  .btn { display:inline-block; background:var(--red); color:#fff; text-decoration:none; font-weight:800; padding:14px 30px; border-radius:10px; border:none; cursor:pointer; font-size:1rem; transition:.15s; box-shadow:0 6px 0 var(--deep); }
+  .btn:hover { transform:translateY(2px); box-shadow:0 4px 0 var(--deep); }
+  .btn.navy { background:var(--navy); box-shadow:0 6px 0 #06141d; }
+  .btn.navy:hover { box-shadow:0 4px 0 #06141d; }
+
+  .hero { padding:72px 0 60px; background:
+      radial-gradient(circle at 85% 20%, rgba(46,139,139,.18), transparent 40%),
+      repeating-linear-gradient(-45deg, transparent 0 26px, rgba(15,45,64,.03) 26px 52px),
+      var(--wrapper); }
+  .hero-grid { display:grid; grid-template-columns:1.05fr .95fr; gap:52px; align-items:center; }
+  .kicker { color:var(--teal); font-weight:800; text-transform:uppercase; letter-spacing:.2em; font-size:.76rem; margin-bottom:14px; }
+  h1 { font-size:clamp(2.3rem,5vw,3.6rem); margin-bottom:16px; }
+  .lede { color:var(--muted); font-size:1.07rem; max-width:32em; margin-bottom:26px; }
+  .cta-row { display:flex; gap:14px; flex-wrap:wrap; align-items:center; margin-bottom:20px; }
+  .phone-hero { display:flex; align-items:center; gap:12px; background:var(--white); border:2px dashed var(--navy); border-radius:14px; padding:14px 20px; width:fit-content; }
+  .phone-hero b { font-size:1.3rem; color:var(--navy); }
+  .phone-hero small { display:block; color:var(--muted); font-size:.75rem; }
+  .board { background:var(--navy); border-radius:16px; padding:30px; color:#e8e2cf; box-shadow:0 18px 44px rgba(10,31,46,.35); position:relative; transform:rotate(1.5deg); }
+  .board::before { content:""; position:absolute; top:-12px; left:50%; transform:translateX(-50%) rotate(-2deg); width:110px; height:26px; background:var(--gold); opacity:.85; border-radius:4px; }
+  .board h3 { color:#fff; text-align:center; font-size:1.2rem; margin-bottom:16px; letter-spacing:.06em; }
+  .board-row { display:flex; justify-content:space-between; padding:9px 4px; border-bottom:1px dotted rgba(232,226,207,.35); font-size:.95rem; }
+  .board-row:last-child { border-bottom:none; }
+  .board-row .p { color:var(--gold); font-weight:800; white-space:nowrap; margin-left:16px; }
+  .board small { display:block; text-align:center; margin-top:14px; color:#9db4c0; font-size:.78rem; font-style:italic; }
+
+  section { padding:64px 0; }
+  .head { text-align:center; max-width:44em; margin:0 auto 42px; }
+  .head h2 { font-size:clamp(1.75rem,3vw,2.35rem); margin-bottom:10px; }
+  .head p { color:var(--muted); }
+
+  .menu-cats { display:grid; grid-template-columns:repeat(2,1fr); gap:30px; max-width:900px; margin:0 auto; }
+  .menu-card { background:var(--white); border-radius:16px; padding:28px 30px; box-shadow:0 10px 26px rgba(34,48,58,.09); border-top:5px solid var(--teal); }
+  .menu-card.hot { border-top-color:var(--red); }
+  .menu-card h3 { font-size:1.25rem; margin-bottom:14px; display:flex; align-items:center; gap:10px; }
+  .m-row { display:flex; justify-content:space-between; gap:14px; padding:9px 0; border-bottom:1px dashed rgba(34,48,58,.15); font-size:.95rem; }
+  .m-row:last-child { border-bottom:none; }
+  .m-row small { display:block; color:var(--muted); font-size:.82rem; }
+  .m-row .p { font-weight:800; color:var(--navy); white-space:nowrap; }
+
+  .combo-band { background:var(--navy); color:#e8e2cf; text-align:center; padding:44px 0; }
+  .combo-band b { font-family:Georgia,serif; font-size:clamp(1.4rem,2.6vw,2rem); color:#fff; display:block; }
+  .combo-band span { color:var(--gold); font-size:1.05rem; font-weight:700; }
+
+  .steps { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+  .step-card { background:var(--white); border-radius:14px; padding:26px; box-shadow:0 8px 22px rgba(34,48,58,.08); }
+  .step-card b { color:var(--red); font-size:.8rem; letter-spacing:.14em; text-transform:uppercase; }
+  .step-card h3 { margin:6px 0 8px; font-size:1.12rem; }
+  .step-card p { color:var(--muted); font-size:.92rem; }
+
+  .info-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+  .info-card { background:var(--white); border-radius:14px; padding:26px; box-shadow:0 8px 22px rgba(34,48,58,.08); }
+  .info-card h3 { margin-bottom:10px; font-size:1.12rem; }
+  .info-card p, .info-card td { color:var(--muted); font-size:.93rem; }
+  .hours td { padding:5px 0; }
+  .hours td:last-child { text-align:right; font-weight:700; color:var(--navy); }
+
+  .reviews { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+  .rev { background:var(--white); border-radius:14px; padding:24px; box-shadow:0 8px 22px rgba(34,48,58,.08); font-size:.93rem; color:var(--muted); }
+  .rev .stars { color:var(--gold); letter-spacing:2px; margin-bottom:8px; }
+  .rev b { color:var(--navy); display:block; margin-bottom:6px; }
+
+  .order-band { background:var(--newsprint); border-block:2px solid var(--navy); }
+  form.phone-order { background:var(--white); border-radius:18px; padding:32px; max-width:560px; margin:0 auto; display:grid; gap:14px; box-shadow:0 14px 36px rgba(34,48,58,.15); }
+  .phone-order label { font-size:.78rem; font-weight:800; color:var(--navy); text-transform:uppercase; letter-spacing:.08em; }
+  .phone-order input, .phone-order select, .phone-order textarea { width:100%; padding:12px 15px; border-radius:9px; border:1.5px solid rgba(34,48,58,.22); font-size:.97rem; font-family:inherit; }
+
+  footer { background:var(--deep); color:#9db4c0; padding:38px 0 26px; font-size:.88rem; }
+  .foot-flex { display:flex; justify-content:space-between; flex-wrap:wrap; gap:14px; margin-bottom:16px; }
+  footer a { color:#fff; text-decoration:none; }
+  .fine { border-top:1px solid rgba(255,255,255,.1); padding-top:16px; font-size:.78rem; }
+
+  @media(max-width:880px){ nav.links{display:none;} .hero-grid{grid-template-columns:1fr;} .board{transform:none;} .menu-cats,.steps,.info-grid,.reviews{grid-template-columns:1fr;} }
+</style>
+</head>
+<body>
+
+<div class="topbar">🐟 Fresh fish in every morning · Phone ahead &amp; skip the queue · Open 7 days</div>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="#">
+      <span class="badge">🐟</span>
+      <span><b>Skipper's</b><small>Fish &amp; Chips · Browns Bay</small></span>
+    </a>
+    <nav class="links"><a href="#menu">Menu</a><a href="#order">Order Ahead</a><a href="#visit">Hours &amp; Location</a></nav>
+    <a class="btn" href="#order" style="padding:11px 20px; font-size:.9rem;">Order For Pickup</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="kicker">Fresh off the boat · Cooked to order · Since 1987</p>
+      <h1>Proper fish &amp; chips,<br>the way Browns Bay likes it.</h1>
+      <p class="lede">Crisp batter that actually crunches, portions that don't embarrass you, and fish delivered fresh every morning. Walk in — or phone it in and walk past the queue.</p>
+      <div class="cta-row">
+        <a class="btn" href="#order">Order Ahead For Pickup</a>
+        <a class="btn navy" href="#menu">See The Menu</a>
+      </div>
+      <div class="phone-hero">
+        <span style="font-size:1.5rem;">📞</span>
+        <span><b>(09) 555 0182</b><small>Ready in 12–15 minutes</small></span>
+      </div>
+    </div>
+    <div class="board">
+      <h3>TODAY'S CATCH</h3>
+      <div class="board-row"><span>Gurnard</span><span class="p">$7.50</span></div>
+      <div class="board-row"><span>Snapper</span><span class="p">$8.50</span></div>
+      <div class="board-row"><span>Blue Cod</span><span class="p">$9.00</span></div>
+      <div class="board-row"><span>Terakihi</span><span class="p">$7.00</span></div>
+      <div class="board-row"><span>Scallops (6)</span><span class="p">$8.00</span></div>
+      <div class="board-row"><span>Hot Dog</span><span class="p">$3.50</span></div>
+      <small>Board specials change daily — demo menu shown</small>
+    </div>
+  </div>
+</section>
+
+<section id="menu" style="background:#fff;">
+  <div class="wrap">
+    <div class="head">
+      <h2>The Full Menu</h2>
+      <p>Everything cooked to order. Sample pricing shown in this demo build.</p>
+    </div>
+    <div class="menu-cats">
+      <div class="menu-card hot">
+        <h3>🐟 Fish</h3>
+        <div class="m-row"><span>Snapper <small>Battered or crumbed</small></span><span class="p">$8.50</span></div>
+        <div class="m-row"><span>Gurnard <small>Local favourite</small></span><span class="p">$7.50</span></div>
+        <div class="m-row"><span>Blue Cod <small>Sweet &amp; flaky</small></span><span class="p">$9.00</span></div>
+        <div class="m-row"><span>Terakihi</span><span class="p">$7.00</span></div>
+        <div class="m-row"><span>Fresh Bluff Oysters <small>Seasonal, 6pc</small></span><span class="p">$14.00</span></div>
+      </div>
+      <div class="menu-card">
+        <h3>🍟 Sides</h3>
+        <div class="m-row"><span>Hot Chips <small>Small / Large</small></span><span class="p">$4.00 / $6.50</span></div>
+        <div class="m-row"><span>Chip Butty <small>Butter + tomato sauce</small></span><span class="p">$4.50</span></div>
+        <div class="m-row"><span>Potato Fritter</span><span class="p">$2.50</span></div>
+        <div class="m-row"><span>Pineapple Fritter</span><span class="p">$2.50</span></div>
+        <div class="m-row"><span>Springs &amp; Mussels <small>Mixed 6pc</small></span><span class="p">$7.00</span></div>
+      </div>
+      <div class="menu-card">
+        <h3>🌭 Hot Stuff</h3>
+        <div class="m-row"><span>Hot Dog</span><span class="p">$3.50</span></div>
+        <div class="m-row"><span>American Hot Dog</span><span class="p">$5.50</span></div>
+        <div class="m-row"><span>Chicken Burger <small>Lettuce, mayo, cheese</small></span><span class="p">$9.50</span></div>
+        <div class="m-row"><span>Fish Burger <small>Our snapper, salad, tartare</small></span><span class="p">$10.50</span></div>
+      </div>
+      <div class="menu-card hot">
+        <h3>⭐ Family Deals</h3>
+        <div class="m-row"><span>Couple's Night <small>2 fish, large chips, 2 drinks</small></span><span class="p">$24.00</span></div>
+        <div class="m-row"><span>Family Feast <small>4 fish, 2 hot dogs, large chips, 4 drinks</small></span><span class="p">$42.00</span></div>
+        <div class="m-row"><span>Friday Feed <small>6 fish + 2 large chips</small></span><span class="p">$55.00</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="combo-band">
+  <div class="wrap">
+    <b>Friday nights are chippy nights.</b>
+    <span>Phone your Family Feast in before 5pm and it's ready when you drive past on the way home.</span>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="head"><h2>Skip The Friday Queue</h2><p>Three ways to get your fix.</p></div>
+    <div class="steps">
+      <div class="step-card"><b>Walk In</b><h3>Take your chances</h3><p>Fridays 5–7pm the line's out the door. Worth it, but bring patience.</p></div>
+      <div class="step-card"><b>Phone Ahead</b><h3>The local's move</h3><p>Call (09) 555 0182, we cook it fresh, you collect in 12–15 minutes. No line.</p></div>
+      <div class="step-card"><b>Order Online</b><h3>Below, right now</h3><p>Fill the form — we ring back to confirm the time. Simple as.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="visit" style="background:#fff;">
+  <div class="wrap">
+    <div class="head"><h2>Hours &amp; Location</h2></div>
+    <div class="info-grid">
+      <div class="info-card">
+        <h3>🕒 Open 7 Days</h3>
+        <table class="hours" style="width:100%;">
+          <tr><td>Mon – Thu</td><td>11am – 8pm</td></tr>
+          <tr><td>Friday</td><td>11am – 9pm</td></tr>
+          <tr><td>Saturday</td><td>11am – 9pm</td></tr>
+          <tr><td>Sunday</td><td>11:30am – 8pm</td></tr>
+        </table>
+      </div>
+      <div class="info-card">
+        <h3>📍 Find Us</h3>
+        <p>12 Beach Road, Browns Bay<br>Auckland 0630 (demo address)<br><br>Right by the car park behind the shops — follow the smell.</p>
+      </div>
+      <div class="info-card">
+        <h3>💳 Good To Know</h3>
+        <p>EFTPOS &amp; cash · BYO bottle of sauce if you're fussy · Extra tartare always free · Beach picnic tables 2 min walk.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="order-band" id="order">
+  <div class="wrap">
+    <div class="head"><h2>Order For Pickup</h2><p>We'll ring you back within 10 minutes to confirm the cook time.</p></div>
+    <form class="phone-order" action="https://formspree.io/f/mdenvrwl" method="POST">
+      <input type="hidden" name="_subject" value="PICKUP ORDER - Skipper's Fish & Chips">
+      <div><label>Your Name</label><input type="text" name="name" placeholder="Sam" required></div>
+      <div><label>Phone</label><input type="tel" name="phone" placeholder="021 555 0000" required></div>
+      <div><label>Your Order</label><textarea name="order" rows="3" placeholder="2 snapper, large chips, hot dog, 2 drinks" required></textarea></div>
+      <div><label>Pickup Time</label><select name="time"><option>ASAP (12–15 min)</option><option>In 30 minutes</option><option>In 1 hour</option><option>Later today — will confirm</option></select></div>
+      <button class="btn" type="submit" style="width:100%;">Send My Order</button>
+      <p style="font-size:.82rem; color:var(--muted); text-align:center; margin:0;">We confirm by phone before cooking — nothing gets charged online.</p>
+    </form>
+  </div>
+</section>
+
+<section style="background:#fff;">
+  <div class="wrap">
+    <div class="head"><h2>What The Locals Say</h2><p>Sample reviews shown for layout purposes.</p></div>
+    <div class="reviews">
+      <div class="rev"><div class="stars">★★★★★</div><b>"Batter of the year"</b>"Crispy 20 minutes later, which never happens. Gurnard was fresh as anything. Our new Friday spot."</div>
+      <div class="rev"><div class="stars">★★★★★</div><b>"Phone ahead, trust me"</b>"Ordered at 5:40 for a 6pm pickup on a Friday — drove straight past the queue feeling like a criminal."</div>
+      <div class="rev"><div class="stars">★★★★☆</div><b>"Generous with the scoops"</b>"Large feed actually fed four. Chips were spot on, fish burger was the sleeper hit."</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-flex">
+      <div><b style="color:#fff;">Skipper's Fish &amp; Chips 🐟</b><br>12 Beach Road, Browns Bay, Auckland (demo)<br>(09) 555 0182 · Open 7 days from 11am</div>
+      <div><a href="#menu">Menu</a> · <a href="#order">Order Ahead</a> · <a href="#visit">Hours</a></div>
+    </div>
+    <div class="fine">Demo website build · © 2026 Skipper's — template by Noah Kepa-Allen Web Studio</div>
+  </div>
+</footer>
+
+</body>
+</html>
