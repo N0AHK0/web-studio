@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shoreline Motors — WOF, Servicing &amp; Repairs | Northcote, Auckland</title>
+<meta name="description" content="WOF from $60, full servicing and repairs in Northcote, Auckland. MTA-style qualified technicians, upfront pricing, courtesy car available. Book online in 30 seconds.">
+<meta property="og:title" content="Shoreline Motors — WOF &amp; Servicing, Northcote">
+<meta property="og:description" content="WOF from $60, upfront pricing, courtesy car. Book your WOF online in 30 seconds.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<style>
+  :root {
+    --steel: #23272c;
+    --carbon: #17191c;
+    --safety: #ff7a1a;
+    --safety-dark: #e05f00;
+    --chrome: #d9dde2;
+    --shopfloor: #f2f3f5;
+    --ink: #22262b;
+    --muted: #77808a;
+    --white: #fff;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { font-family:'Segoe UI', system-ui, sans-serif; background:var(--shopfloor); color:var(--ink); line-height:1.6; }
+  .wrap { width:min(1060px,92%); margin:0 auto; }
+  h1,h2,h3 { font-family:Georgia, serif; color:var(--steel); line-height:1.15; }
+
+  .topbar { background:var(--carbon); color:var(--chrome); text-align:center; font-size:.84rem; padding:8px 14px; letter-spacing:.06em; }
+  .topbar b { color:var(--safety); }
+  header.site { position:sticky; top:0; z-index:40; background:rgba(242,243,245,.97); backdrop-filter:blur(6px); border-bottom:1px solid rgba(35,39,44,.15); }
+  .nav { display:flex; align-items:center; justify-content:space-between; padding:13px 0; }
+  .brand { display:flex; align-items:center; gap:11px; text-decoration:none; }
+  .brand .gear { width:40px; height:40px; border-radius:10px; background:linear-gradient(145deg,#3a4046,var(--carbon)); display:grid; place-items:center; color:var(--safety); font-size:1.25rem; }
+  .brand b { font-family:Georgia,serif; font-size:1.28rem; color:var(--steel); display:block; line-height:1.05; }
+  .brand small { color:var(--muted); font-size:.68rem; letter-spacing:.18em; text-transform:uppercase; }
+  nav.links { display:flex; gap:24px; }
+  nav.links a { color:var(--ink); text-decoration:none; font-weight:600; font-size:.92rem; opacity:.85; }
+  nav.links a:hover { opacity:1; color:var(--safety-dark); }
+  .btn { display:inline-block; background:var(--safety); color:#fff; text-decoration:none; font-weight:800; padding:14px 30px; border-radius:8px; border:none; cursor:pointer; font-size:1rem; transition:.15s; box-shadow:0 4px 0 var(--safety-dark); }
+  .btn:hover { transform:translateY(2px); box-shadow:0 2px 0 var(--safety-dark); }
+  .btn.dark { background:var(--steel); box-shadow:0 4px 0 var(--carbon); }
+  .btn.dark:hover { box-shadow:0 2px 0 var(--carbon); }
+
+  .hero { background:linear-gradient(160deg,var(--carbon),var(--steel)); color:var(--chrome); padding:76px 0 62px; }
+  .hero-grid { display:grid; grid-template-columns:1.05fr .95fr; gap:50px; align-items:center; }
+  .kicker { color:var(--safety); font-weight:800; text-transform:uppercase; letter-spacing:.2em; font-size:.76rem; margin-bottom:14px; }
+  h1 { color:#fff; font-size:clamp(2.2rem,4.6vw,3.4rem); margin-bottom:16px; }
+  .lede { color:#aeb6bf; font-size:1.06rem; max-width:32em; margin-bottom:26px; }
+  .cta-row { display:flex; gap:14px; flex-wrap:wrap; align-items:center; margin-bottom:22px; }
+  .hero .note { color:#8a939d; font-size:.86rem; }
+  .wof-card { background:var(--white); border-radius:16px; padding:30px; color:var(--ink); box-shadow:0 20px 50px rgba(0,0,0,.4); position:relative; }
+  .wof-card::before { content:"WOF $60"; position:absolute; top:-14px; right:22px; background:var(--safety); color:#fff; font-weight:800; letter-spacing:.06em; padding:7px 16px; border-radius:6px; font-size:.95rem; }
+  .wof-card h3 { font-size:1.25rem; margin-bottom:14px; }
+  .wof-card ul { list-style:none; margin-bottom:20px; }
+  .wof-card li { padding:9px 0 9px 30px; position:relative; border-bottom:1px solid rgba(35,39,44,.08); font-size:.94rem; }
+  .wof-card li:last-child { border-bottom:none; }
+  .wof-card li::before { content:"✓"; position:absolute; left:2px; top:9px; width:20px; height:20px; background:var(--safety); border-radius:50%; color:#fff; font-size:.72rem; display:grid; place-items:center; font-weight:800; }
+
+  section { padding:64px 0; }
+  .head { text-align:center; max-width:44em; margin:0 auto 42px; }
+  .head h2 { font-size:clamp(1.75rem,3vw,2.35rem); margin-bottom:10px; }
+  .head p { color:var(--muted); }
+
+  .services { display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+  .svc { background:var(--white); border-radius:14px; padding:26px; box-shadow:0 8px 22px rgba(35,39,44,.08); border-top:4px solid var(--steel); transition:.2s; }
+  .svc:hover { transform:translateY(-4px); border-top-color:var(--safety); }
+  .svc .ico { font-size:1.7rem; margin-bottom:10px; }
+  .svc h3 { font-size:1.12rem; margin-bottom:6px; }
+  .svc p { color:var(--muted); font-size:.92rem; }
+  .svc .price { display:inline-block; margin-top:10px; font-weight:800; color:var(--safety-dark); }
+
+  .trust-band { background:var(--carbon); color:var(--chrome); padding:40px 0; }
+  .trust-row { display:grid; grid-template-columns:repeat(4,1fr); gap:20px; text-align:center; }
+  .trust-row b { display:block; color:#fff; font-size:1.05rem; margin-bottom:4px; }
+  .trust-row span { color:#8a939d; font-size:.86rem; }
+
+  .booking-grid { display:grid; grid-template-columns:1fr 1fr; gap:44px; align-items:start; }
+  .info-stack .info-card { background:var(--white); border-radius:14px; padding:24px; box-shadow:0 8px 22px rgba(35,39,44,.08); margin-bottom:16px; }
+  .info-card h3 { margin-bottom:8px; font-size:1.1rem; }
+  .info-card p { color:var(--muted); font-size:.93rem; }
+  .hours td { padding:5px 0; width:100%; }
+  .hours td:last-child { text-align:right; font-weight:700; color:var(--steel); }
+  form.book-form { background:var(--white); border-radius:16px; padding:32px; display:grid; gap:14px; box-shadow:0 14px 36px rgba(35,39,44,.14); }
+  .book-form label { font-size:.78rem; font-weight:800; color:var(--steel); text-transform:uppercase; letter-spacing:.08em; }
+  .book-form input, .book-form select { width:100%; padding:12px 15px; border-radius:8px; border:1.5px solid rgba(35,39,44,.22); font-size:.97rem; font-family:inherit; }
+  .book-form .two { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+
+  .reviews { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+  .rev { background:var(--white); border-radius:14px; padding:24px; box-shadow:0 8px 22px rgba(35,39,44,.08); font-size:.93rem; color:var(--muted); }
+  .rev .stars { color:var(--safety); letter-spacing:2px; margin-bottom:8px; }
+  .rev b { color:var(--steel); display:block; margin-bottom:6px; }
+
+  footer { background:var(--carbon); color:#8a939d; padding:36px 0 26px; font-size:.88rem; }
+  .foot-flex { display:flex; justify-content:space-between; flex-wrap:wrap; gap:14px; margin-bottom:16px; }
+  footer a { color:#fff; text-decoration:none; }
+  .fine { border-top:1px solid rgba(255,255,255,.1); padding-top:16px; font-size:.78rem; }
+
+  @media(max-width:880px){ nav.links{display:none;} .hero-grid,.booking-grid{grid-template-columns:1fr;} .services,.trust-row,.reviews{grid-template-columns:1fr 1fr;} .book-form .two{grid-template-columns:1fr;} }
+  @media(max-width:560px){ .services,.trust-row,.reviews{grid-template-columns:1fr;} }
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.visible{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+</style>
+</head>
+<body>
+
+<div class="topbar">🔧 Book online in 30 seconds · WOF from <b>$60</b> · Courtesy car available · Ph (09) 555 0166</div>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="#">
+      <span class="gear">⚙️</span>
+      <span><b>Shoreline Motors</b><small>WOF · Service · Repair · Northcote</small></span>
+    </a>
+    <nav class="links"><a href="#services">Services</a><a href="#book">Book Now</a><a href="#reviews">Reviews</a><a href="#visit">Hours &amp; Location</a></nav>
+    <a class="btn" href="#book" style="padding:11px 20px; font-size:.9rem;">Book A WOF</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="kicker">Qualified techs · Upfront pricing · No surprises</p>
+      <h1>WOF while you wait.<br>Repairs done right, first time.</h1>
+      <p class="lede">Book online in 30 seconds, drop the car off, and get on with your day. We text you before we touch anything that costs extra — the quote we give is the invoice you pay.</p>
+      <div class="cta-row">
+        <a class="btn" href="#book">Book My WOF — $60</a>
+        <a class="btn dark" href="#services">See All Services</a>
+      </div>
+      <p class="note">⭐ 4.8 from 300+ local drivers · Open Monday to Saturday</p>
+    </div>
+    <div class="wof-card">
+      <h3>🚗 The While-You-Wait WOF</h3>
+      <ul>
+        <li>Fixed $60 — no hidden "inspection fees"</li>
+        <li>Free recheck if anything needs a second look</li>
+        <li>Coffee, WiFi and a desk if you're waiting</li>
+        <li>Courtesy car for bigger jobs</li>
+        <li>Reminder text before next year's is due</li>
+      </ul>
+      <a class="btn" href="#book" style="width:100%; text-align:center;">Grab A Slot This Week</a>
+    </div>
+  </div>
+</section>
+
+<section id="services" style="background:#fff;">
+  <div class="wrap">
+    <div class="head"><h2>What We Do</h2><p>Everything your car needs, quoted before we start. Sample pricing shown.</p></div>
+    <div class="services">
+      <div class="svc"><div class="ico">🚙</div><h3>WOF Inspections</h3><p>While-you-wait warrant of fitness, all makes. Free recheck within 28 days if repairs are needed.</p><span class="price">From $60</span></div>
+      <div class="svc"><div class="ico">🛠️</div><h3>Full Servicing</h3><p>Oil and filter, fluids, brakes, battery health and a 40-point report in plain English.</p><span class="price">From $189</span></div>
+      <div class="svc"><div class="ico">🛞</div><h3>Brakes &amp; Tyres</h3><p>Pads, discs, wheel alignments and tyre replacements at honest prices — quoted first, always.</p><span class="price">From $120</span></div>
+      <div class="svc"><div class="ico">🔋</div><h3>Batteries &amp; Electrics</h3><p>Flat battery diagnosis, replacement and charging system checks while you wait.</p><span class="price">From $95</span></div>
+      <div class="svc"><div class="ico">💻</div><h3>Diagnostics</h3><p>That engine light isn't a mystery. Full computer scan with a fix-it plan and fixed quote.</p><span class="price">$89 scan, quoted from there</span></div>
+      <div class="svc"><div class="ico">❄️</div><h3>Air Conditioning</h3><p>Regas, leak detection and compressor repairs so summer doesn't ruin you.</p><span class="price">From $149</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="trust-band">
+  <div class="wrap trust-row">
+    <div><b>✅ Upfront Quotes</b><span>We text before any extra work. No invoice shock, ever.</span></div>
+    <div><b>🧰 Qualified Techs</b><span>Experienced, certified technicians on every job.</span></div>
+    <div><b>🚗 Courtesy Car</b><span>Need to get to work? Book it free with major services.</span></div>
+    <div><b>📅 Easy Booking</b><span>30 seconds online. We confirm by text within the hour.</span></div>
+  </div>
+</div>
+
+<section id="book">
+  <div class="wrap">
+    <div class="head"><h2>Book Your WOF or Service</h2><p>We'll text back within the hour to confirm your slot.</p></div>
+    <div class="booking-grid">
+      <div class="info-stack">
+        <div class="info-card">
+          <h3>🕒 Hours</h3>
+          <table class="hours">
+            <tr><td>Monday – Friday</td><td>7:30am – 5:30pm</td></tr>
+            <tr><td>Saturday</td><td>8:00am – 1:00pm</td></tr>
+            <tr><td>Sunday</td><td>Closed</td></tr>
+          </table>
+        </div>
+        <div class="info-card">
+          <h3>📍 Find Us</h3>
+          <p>48 Onewa Road, Northcote, Auckland 0627 (demo address)<br>Ph (09) 555 0166<br>hello@shorelinemotors.demo</p>
+        </div>
+        <div class="info-card">
+          <h3>💳 Good To Know</h3>
+          <p>EFTPOS and all major cards · Fleet and rental work welcome · Afterpay available on jobs over $300 · Free loan car with major services.</p>
+        </div>
+      </div>
+      <form class="book-form" action="https://formspree.io/f/mdenvrwl" method="POST">
+        <input type="hidden" name="_subject" value="BOOKING REQUEST - Shoreline Motors website">
+        <div class="two">
+          <div><label>Your Name</label><input type="text" name="name" placeholder="Jane Bennett" required></div>
+          <div><label>Phone</label><input type="tel" name="phone" placeholder="021 555 0000" required></div>
+        </div>
+        <div class="two">
+          <div><label>Vehicle Make &amp; Model</label><input type="text" name="vehicle" placeholder="Toyota Corolla 2016" required></div>
+          <div><label>Plate (optional)</label><input type="text" name="plate" placeholder="ABC123"></div>
+        </div>
+        <div><label>What Do You Need?</label>
+          <select name="service">
+            <option>WOF inspection — $60</option>
+            <option>WOF + full service combo</option>
+            <option>Full service</option>
+            <option>Brakes or tyres</option>
+            <option>Battery or electrical</option>
+            <option>Engine light / diagnostics</option>
+            <option>Air conditioning</option>
+            <option>Something else</option>
+          </select>
+        </div>
+        <div><label>Preferred Day</label>
+          <select name="day">
+            <option>As soon as possible</option>
+            <option>Monday</option><option>Tuesday</option><option>Wednesday</option>
+            <option>Thursday</option><option>Friday</option><option>Saturday morning</option>
+          </select>
+        </div>
+        <div><label>Anything We Should Know?</label><input type="text" name="notes" placeholder="Noises, leaks, warning lights..."></div>
+        <button class="btn" type="submit" style="width:100%;">Request My Booking</button>
+        <p style="font-size:.82rem; color:var(--muted); text-align:center; margin:0;">No payment now — we confirm your slot by text first.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section id="reviews" style="background:#fff;">
+  <div class="wrap">
+    <div class="head"><h2>What Locals Say</h2><p>Sample reviews shown for layout purposes.</p></div>
+    <div class="reviews">
+      <div class="rev"><div class="stars">★★★★★</div><b>"Quoted $340, paid $340"</b>"Found the noise, called me with the price, fixed it same day. The quote was the invoice. Rare and appreciated."</div>
+      <div class="rev"><div class="stars">★★★★★</div><b>"WOF in 40 minutes"</b>"Dropped it at 8, coffee in hand, drove away before 9. Booked next year's before I left."</div>
+      <div class="rev"><div class="stars">★★★★☆</div><b>"Honest about the small stuff"</b>"Told me my wiper thing could wait a month. Who tells you to spend less? Customer for life."</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-flex">
+      <div><b style="color:#fff;">Shoreline Motors 🔧</b><br>48 Onewa Road, Northcote, Auckland (demo)<br>(09) 555 0166 · Open Mon–Fri 7:30–5:30, Sat 8–1</div>
+      <div><a href="#services">Services</a> · <a href="#book">Book Now</a> · <a href="#visit">Hours</a></div>
+    </div>
+    <div class="fine">Demo website build · © 2026 Shoreline Motors — template by Web Co-Create</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var sel='.head,.section-head,.svc,.benefit,.review,.rev,.card,.plan,.shot,.step,.stp,.step-card,.info-card,.dish,.member,.coach,.quote-card,.tile,.menu-card,.trust-row>div,.feed-box,.board,.trial-card,.faq-item,.aud,.svc-row,.wof-card,.stat,figure,.hours,.pricelist,.marquee-track,.compare-table';
+  var els=document.querySelectorAll(sel);
+  els.forEach(function(e){e.classList.add('reveal')});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('visible');io.unobserve(x.target)}})},{threshold:.12});
+    els.forEach(function(e){io.observe(e)});
+  } else { els.forEach(function(e){e.classList.add('visible')}); }
+})();
+</script>
+</body>
+</html>
+

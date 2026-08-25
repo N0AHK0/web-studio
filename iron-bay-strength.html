@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Iron Bay Strength — 24/7 Gym &amp; Coaching | Takapuna, Auckland</title>
+<meta name="description" content="Boutique 24/7 gym in Takapuna with real coaching. Small group classes, personalised programming, no lock-in contracts. Free 7-day trial — start today.">
+<meta property="og:title" content="Iron Bay Strength — 24/7 Gym, Takapuna">
+<meta property="og:description" content="Real coaching, small classes, no lock-ins. Free 7-day trial at Takapuna's boutique strength gym.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<style>
+  :root {
+    --black: #101114;
+    --panel: #1a1c20;
+    --volt: #d7fb3e;
+    --volt-dark: #a9c922;
+    --chalk: #f2f3f0;
+    --grey: #9aa0a6;
+    --red: #ff4d4d;
+    --white: #fff;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { font-family:'Segoe UI', system-ui, sans-serif; background:var(--black); color:var(--chalk); line-height:1.6; }
+  .wrap { width:min(1060px,92%); margin:0 auto; }
+  h1,h2,h3 { line-height:1.12; letter-spacing:-.01em; font-weight:800; }
+  h1,h2,h3 { font-family:'Segoe UI', system-ui, sans-serif; text-transform:uppercase; }
+  .serif { font-family:Georgia,serif; font-weight:400; text-transform:none; letter-spacing:0; }
+
+  .topbar { background:var(--volt); color:#101114; text-align:center; font-size:.83rem; font-weight:800; letter-spacing:.1em; text-transform:uppercase; padding:9px 14px; }
+  header.site { position:sticky; top:0; z-index:40; background:rgba(16,17,20,.94); backdrop-filter:blur(8px); border-bottom:1px solid rgba(255,255,255,.08); }
+  .nav { display:flex; align-items:center; justify-content:space-between; padding:14px 0; }
+  .brand { display:flex; align-items:center; gap:10px; text-decoration:none; }
+  .brand .bolt { width:36px; height:36px; background:var(--volt); display:grid; place-items:center; color:#101114; font-weight:900; font-size:1.1rem; transform:skewX(-8deg); }
+  .brand b { color:var(--chalk); font-size:1.2rem; text-transform:uppercase; letter-spacing:.04em; }
+  .brand small { display:block; color:var(--grey); font-size:.64rem; letter-spacing:.3em; text-transform:uppercase; }
+  nav.links { display:flex; gap:26px; }
+  nav.links a { color:var(--grey); text-decoration:none; font-size:.9rem; font-weight:700; text-transform:uppercase; letter-spacing:.06em; }
+  nav.links a:hover { color:var(--volt); }
+  .btn { display:inline-block; background:var(--volt); color:#101114; text-decoration:none; font-weight:900; text-transform:uppercase; letter-spacing:.05em; padding:15px 32px; border:none; cursor:pointer; font-size:.95rem; transition:.15s; }
+  .btn:hover { background:var(--volt-dark); transform:translateY(-2px); }
+  .btn.ghost { background:transparent; color:var(--chalk); border:2px solid var(--chalk); }
+
+  .hero { padding:90px 0 70px; background:
+      radial-gradient(700px 340px at 85% 0%, rgba(215,251,62,.09), transparent),
+      repeating-linear-gradient(90deg, transparent 0 90px, rgba(255,255,255,.025) 90px 91px),
+      var(--black); }
+  .hero-grid { display:grid; grid-template-columns:1.1fr .9fr; gap:52px; align-items:center; }
+  .kicker { color:var(--volt); font-weight:900; text-transform:uppercase; letter-spacing:.24em; font-size:.75rem; margin-bottom:16px; }
+  h1 { color:#fff; font-size:clamp(2.4rem,5.2vw,3.8rem); margin-bottom:18px; }
+  h1 em { font-style:normal; color:var(--volt); }
+  .lede { color:var(--grey); font-size:1.08rem; max-width:32em; margin-bottom:30px; }
+  .cta-row { display:flex; gap:14px; flex-wrap:wrap; align-items:center; margin-bottom:24px; }
+  .hero-stats { display:flex; gap:36px; flex-wrap:wrap; }
+  .hero-stats b { display:block; color:#fff; font-size:1.5rem; }
+  .hero-stats span { color:var(--grey); font-size:.82rem; text-transform:uppercase; letter-spacing:.08em; }
+  .trial-card { background:var(--panel); border:1px solid rgba(255,255,255,.09); border-left:6px solid var(--volt); padding:34px 32px; }
+  .trial-card h3 { color:#fff; font-size:1.3rem; margin-bottom:6px; }
+  .trial-card p { color:var(--grey); font-size:.92rem; margin-bottom:18px; }
+  .trial-card ul { list-style:none; margin-bottom:22px; }
+  .trial-card li { padding:7px 0 7px 28px; position:relative; font-size:.93rem; color:var(--chalk); border-bottom:1px solid rgba(255,255,255,.06); }
+  .trial-card li:last-child { border-bottom:none; }
+  .trial-card li::before { content:"→"; position:absolute; left:0; color:var(--volt); font-weight:900; }
+
+  section { padding:72px 0; }
+  .head { text-align:center; max-width:46em; margin:0 auto 46px; }
+  .head h2 { color:#fff; font-size:clamp(1.8rem,3.2vw,2.5rem); margin-bottom:12px; }
+  .head p { color:var(--grey); }
+
+  .memberships { display:grid; grid-template-columns:repeat(3,1fr); gap:22px; align-items:stretch; }
+  .plan { background:var(--panel); border:1px solid rgba(255,255,255,.09); padding:34px 30px; display:flex; flex-direction:column; }
+  .plan.hot { border:2px solid var(--volt); position:relative; }
+  .plan .tag { position:absolute; top:-13px; left:30px; background:var(--volt); color:#101114; font-size:.7rem; font-weight:900; letter-spacing:.1em; text-transform:uppercase; padding:5px 14px; }
+  .plan h3 { color:var(--grey); font-size:.95rem; letter-spacing:.14em; margin-bottom:12px; }
+  .price { font-size:2.7rem; font-weight:900; color:#fff; line-height:1; margin-bottom:4px; }
+  .price small { font-size:1rem; color:var(--grey); font-weight:600; }
+  .plan ul { list-style:none; margin:20px 0 28px; flex:1; }
+  .plan li { padding:8px 0 8px 26px; position:relative; font-size:.92rem; border-bottom:1px solid rgba(255,255,255,.05); }
+  .plan li::before { content:"+"; position:absolute; left:2px; color:var(--volt); font-weight:900; }
+  .no-lock { text-align:center; color:var(--grey); font-size:.85rem; margin-top:26px; }
+  .no-lock b { color:var(--volt); }
+
+  .timetable { width:100%; border-collapse:collapse; background:var(--panel); }
+  .timetable th, .timetable td { padding:14px 18px; text-align:left; font-size:.92rem; border-bottom:1px solid rgba(255,255,255,.07); }
+  .timetable th { background:#22252a; color:var(--volt); text-transform:uppercase; letter-spacing:.08em; font-size:.78rem; }
+  .timetable td:first-child { font-weight:800; color:#fff; white-space:nowrap; }
+  .class-name { color:var(--chalk); font-weight:700; }
+  .class-sub { display:block; color:var(--grey); font-size:.82rem; }
+
+  .coaches { display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+  .coach { background:var(--panel); border:1px solid rgba(255,255,255,.08); text-align:center; padding:30px 24px; }
+  .coach .face { width:90px; height:90px; margin:0 auto 16px; border-radius:50%; display:grid; place-items:center; font-size:2.4rem; background:linear-gradient(140deg,#2a2d33,#101114); border:2px solid var(--volt); }
+  .coach h3 { color:#fff; font-size:1.05rem; margin-bottom:4px; }
+  .coach .role { color:var(--volt); font-size:.75rem; font-weight:800; text-transform:uppercase; letter-spacing:.14em; margin-bottom:10px; display:block; }
+  .coach p { color:var(--grey); font-size:.9rem; }
+
+  .revs { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+  .rev { background:var(--panel); border:1px solid rgba(255,255,255,.08); padding:26px; font-size:.93rem; color:var(--grey); }
+  .rev .stars { color:var(--volt); letter-spacing:2px; margin-bottom:10px; }
+  .rev b { color:#fff; display:block; margin-bottom:6px; }
+
+  .trial-band { background:var(--volt); color:#101114; }
+  .trial-band .head h2 { color:#101114; }
+  .trial-band .head p { color:#3d4a12; }
+  form.trial-form { background:var(--black); max-width:600px; margin:0 auto; padding:34px; display:grid; gap:14px; border-left:6px solid #101114; }
+  .trial-form label { color:var(--chalk); font-size:.75rem; font-weight:900; text-transform:uppercase; letter-spacing:.1em; }
+  .trial-form input, .trial-form select { width:100%; padding:13px 16px; background:var(--panel); border:1.5px solid rgba(255,255,255,.15); color:var(--chalk); font-size:.98rem; font-family:inherit; border-radius:0; }
+  .trial-form .two { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+  .trial-form .btn { width:100%; text-align:center; }
+
+  footer { border-top:1px solid rgba(255,255,255,.08); padding:40px 0 30px; color:var(--grey); font-size:.88rem; }
+  .foot-flex { display:flex; justify-content:space-between; flex-wrap:wrap; gap:16px; margin-bottom:18px; }
+  footer a { color:var(--chalk); text-decoration:none; }
+  .fine { border-top:1px solid rgba(255,255,255,.06); padding-top:16px; font-size:.78rem; }
+
+  @media(max-width:880px){ nav.links{display:none;} .hero-grid{grid-template-columns:1fr;} .memberships,.coaches,.revs{grid-template-columns:1fr;} .trial-form .two{grid-template-columns:1fr;} .timetable{font-size:.85rem;} .timetable th,.timetable td{padding:10px 10px;} }
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.visible{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+</style>
+</head>
+<body>
+
+<div class="topbar">⚡ No lock-in contracts · Free 7-day trial · Open 24/7 for members</div>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="#">
+      <span class="bolt">IB</span>
+      <span><b>Iron Bay Strength</b><small>Takapuna · Est. 2021</small></span>
+    </a>
+    <nav class="links"><a href="#memberships">Membership</a><a href="#timetable">Timetable</a><a href="#coaches">Coaches</a><a href="#trial">Free Trial</a></nav>
+    <a class="btn" href="#trial" style="padding:11px 22px; font-size:.85rem;">Start Free Week</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="kicker">Strength · Conditioning · Real Coaching</p>
+      <h1>Get strong in a gym that <em>actually coaches you.</em></h1>
+      <p class="lede">No sea of treadmills. No headphones-and-hope. Small group strength classes, personalised programming, and coaches who learn your name in week one. 24/7 member access, zero lock-in contracts.</p>
+      <div class="cta-row">
+        <a class="btn" href="#trial">Claim Your Free Week</a>
+        <a class="btn ghost" href="#memberships">See Membership</a>
+      </div>
+      <div class="hero-stats">
+        <div><b>240+</b><span>Active members</span></div>
+        <div><b>38</b><span>Classes weekly</span></div>
+        <div><b>4.9★</b><span>Google rating</span></div>
+      </div>
+    </div>
+    <div class="trial-card">
+      <h3>The Free 7-Day Trial</h3>
+      <p>Everything a member gets. No card required, no awkward sales chat.</p>
+      <ul>
+        <li>Unlimited small-group classes for 7 days</li>
+        <li>One-on-one movement assessment with a coach</li>
+        <li>24/7 door-code access from day one</li>
+        <li>Programme starter guide to keep either way</li>
+      </ul>
+      <a class="btn" href="#trial" style="width:100%; text-align:center;">Start My Free Week →</a>
+    </div>
+  </div>
+</section>
+
+<section id="memberships" style="background:var(--panel);">
+  <div class="wrap">
+    <div class="head">
+      <h2>Simple Membership, Zero Lock-In</h2>
+      <p>Weekly pricing, cancel anytime with two weeks' notice. No joining fees, no fine print games.</p>
+    </div>
+    <div class="memberships">
+      <div class="plan">
+        <h3>Gym Only</h3>
+        <div class="price">$16<small>/week</small></div>
+        <ul>
+          <li>24/7 door-code access</li>
+          <li>Full weights &amp; cardio floor</li>
+          <li>Programme starter guide</li>
+          <li>Member app &amp; tracking</li>
+        </ul>
+        <a class="btn ghost" href="#trial" style="text-align:center;">Start Free Week</a>
+      </div>
+      <div class="plan hot">
+        <span class="tag">Most Popular</span>
+        <h3>Classes + Gym</h3>
+        <div class="price">$42<small>/week</small></div>
+        <ul>
+          <li>Everything in Gym Only</li>
+          <li>Unlimited small-group classes</li>
+          <li>Monthly coaching check-in</li>
+          <li>Technique workshops included</li>
+          <li>Pause anytime (up to 4 wks/yr)</li>
+        </ul>
+        <a class="btn" href="#trial" style="text-align:center;">Start Free Week</a>
+      </div>
+      <div class="plan">
+        <h3>Coached</h3>
+        <div class="price">$79<small>/week</small></div>
+        <ul>
+          <li>Everything in Classes + Gym</li>
+          <li>Fully personalised programming</li>
+          <li>Fortnightly 1-on-1 coaching</li>
+          <li>Nutrition targets &amp; check-ins</li>
+        </ul>
+        <a class="btn ghost" href="#trial" style="text-align:center;">Start Free Week</a>
+      </div>
+    </div>
+    <p class="no-lock"><b>No lock-in contracts.</b> Join, train, leave whenever. We'd rather earn it every week.</p>
+  </div>
+</section>
+
+<section id="timetable">
+  <div class="wrap">
+    <div class="head"><h2>This Week's Timetable</h2><p>Small groups, capped at 12. Sample week shown.</p></div>
+    <table class="timetable">
+      <tr><th>Time</th><th>Monday</th><th>Wednesday</th><th>Friday</th><th>Saturday</th></tr>
+      <tr><td>6:00am</td><td><span class="class-name">Strength 101</span><span class="class-sub">Squat &amp; press focus</span></td><td><span class="class-name">Strength 101</span><span class="class-sub">Hinge &amp; pull focus</span></td><td><span class="class-name">Engine Room</span><span class="class-sub">Conditioning</span></td><td>—</td></tr>
+      <tr><td>12:00pm</td><td><span class="class-name">Lunch Lift</span><span class="class-sub">45-min full body</span></td><td>—</td><td><span class="class-name">Lunch Lift</span><span class="class-sub">45-min full body</span></td><td>—</td></tr>
+      <tr><td>5:30pm</td><td><span class="class-name">Strength 201</span><span class="class-sub">Intermediate barbell</span></td><td><span class="class-name">Conditioning</span><span class="class-sub">Intervals &amp; sleds</span></td><td><span class="class-name">Friday Night Lights</span><span class="class-sub">Team workout</span></td><td>—</td></tr>
+      <tr><td>7:00am</td><td>—</td><td>—</td><td>—</td><td><span class="class-name">Saturday Smash</span><span class="class-sub">All levels + coffee after</span></td></tr>
+    </table>
+  </div>
+</section>
+
+<section id="coaches" style="background:var(--panel);">
+  <div class="wrap">
+    <div class="head"><h2>Your Coaches</h2><p>Sample profiles shown in this demo build.</p></div>
+    <div class="coaches">
+      <div class="coach"><div class="face">🏋️</div><h3>Matt "Tui" Tuala</h3><span class="role">Head Coach &amp; Owner</span><p>15 years under the bar, 8 coaching. Ex-rugby, current powerlifter. Will fix your squat and remember your dog's name.</p></div>
+      <div class="coach"><div class="face">🤸</div><h3>Jess Harford</h3><span class="role">Strength &amp; Conditioning</span><p>Sports science grad, ex-netball rep. Specialises in getting complete beginners confident under a barbell in six weeks.</p></div>
+      <div class="coach"><div class="face">💪</div><h3>Dan Kereopa</h3><span class="role">Rehab &amp; Return To Sport</span><p>Physio-background coach. The person you see when the shoulder's been dodgy since 2019 and you're over it.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="revs-wrap">
+  <div class="wrap">
+    <div class="head"><h2>Member Results &amp; Raves</h2><p>Sample reviews shown for layout purposes.</p></div>
+    <div class="revs">
+      <div class="rev"><div class="stars">★★★★★</div><b>"First gym I've stayed at"</b>"Two years in. The coaches actually watch you lift and the classes fit around shift work. Down 14kg, up a lot of strength."</div>
+      <div class="rev"><div class="stars">★★★★★</div><b>"Beginner-safe, genuinely"</b>"Walked in having never touched a barbell. Six weeks later I deadlifted 100kg with better form than people twice my size."</div>
+      <div class="rev"><div class="stars">★★★★☆</div><b>"Busy at 5:30, obviously"</b>"The after-work classes fill up, but the app waitlist works and 6am is never packed. No regrets."</div>
+    </div>
+  </div>
+</section>
+
+<section class="trial-band" id="trial">
+  <div class="wrap">
+    <div class="head"><h2>Claim Your Free Week</h2><p>No card. No contract. No salesman named Chad. Just training.</p></div>
+    <form class="trial-form" action="https://formspree.io/f/mdenvrwl" method="POST">
+      <input type="hidden" name="_subject" value="FREE TRIAL REQUEST - Iron Bay Strength">
+      <div class="two">
+        <div><label>First Name</label><input type="text" name="name" placeholder="Sam" required></div>
+        <div><label>Phone</label><input type="tel" name="phone" placeholder="021 555 0000" required></div>
+      </div>
+      <div><label>Email</label><input type="email" name="_replyto" placeholder="sam@email.com" required></div>
+      <div><label>What Are You Keen On?</label>
+        <select name="interest">
+          <option>Free 7-day trial — all access</option>
+          <option>Gym-only membership</option>
+          <option>Classes + Gym membership</option>
+          <option>Coached membership</option>
+          <option>Just have a question</option>
+        </select>
+      </div>
+      <div><label>Have You Trained Before?</label>
+        <select name="experience">
+          <option>Total beginner</option>
+          <option>Trained before, getting back into it</option>
+          <option>Regular trainer</option>
+        </select>
+      </div>
+      <button class="btn" type="submit">Start My Free Week →</button>
+      <p style="font-size:.8rem; color:#3d4a12; text-align:center; margin:0;">We'll text you within a few hours to book your assessment. No spam, ever.</p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-flex">
+      <div><b style="color:#fff;">IRON BAY STRENGTH ⚡</b><br>18 Killarney Street, Takapuna, Auckland (demo address)<br>Staffed 6am–7pm · Members 24/7 · (09) 555 0128</div>
+      <div><a href="#memberships">Membership</a> · <a href="#timetable">Timetable</a> · <a href="#trial">Free Trial</a></div>
+    </div>
+    <div class="fine">Demo website build · © 2026 Iron Bay Strength — template by Web Co-Create</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var sel='.head,.section-head,.svc,.benefit,.review,.rev,.card,.plan,.shot,.step,.stp,.step-card,.info-card,.dish,.member,.coach,.quote-card,.tile,.menu-card,.trust-row>div,.feed-box,.board,.trial-card,.faq-item,.aud,.svc-row,.wof-card,.stat,figure,.hours,.pricelist,.marquee-track,.compare-table';
+  var els=document.querySelectorAll(sel);
+  els.forEach(function(e){e.classList.add('reveal')});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('visible');io.unobserve(x.target)}})},{threshold:.12});
+    els.forEach(function(e){io.observe(e)});
+  } else { els.forEach(function(e){e.classList.add('visible')}); }
+})();
+</script>
+</body>
+</html>
+
