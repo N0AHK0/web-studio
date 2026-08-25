@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grenada Superette — Your Corner Dairy | Forrest Hill, Auckland</title>
+<meta name="description" content="Grenada Superette, Forrest Hill's local dairy. Drinks, hot food, lollies, wholefoods and snacks. Open 7 days. Weekly specials, Lotto, EFTPOS and friendly service.">
+<meta property="og:title" content="Grenada Superette — Forrest Hill's Corner Dairy">
+<meta property="og:description" content="Drinks, hot food, lollies, wholefoods and snacks. Open 7 days in Forrest Hill, Auckland.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<style>
+  :root {
+    --green: #1e6b4f;
+    --green-dark: #14503a;
+    --cream: #fdf8ee;
+    --sand: #f2e9d6;
+    --tomato: #d94f35;
+    --sun: #f4b942;
+    --ink: #2b2a24;
+    --muted: #7d7668;
+    --white: #fff;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { font-family:'Segoe UI', system-ui, sans-serif; background:var(--cream); color:var(--ink); line-height:1.6; }
+  .wrap { width:min(1100px,93%); margin:0 auto; }
+  h1,h2,h3 { font-family:Georgia, serif; color:var(--green-dark); line-height:1.15; }
+
+  .topbar { background:var(--tomato); color:#fff; text-align:center; font-size:.83rem; font-weight:700; letter-spacing:.06em; padding:8px 14px; }
+  header.site { position:sticky; top:0; z-index:40; background:rgba(253,248,238,.97); backdrop-filter:blur(6px); border-bottom:1px solid rgba(30,107,79,.15); }
+  .nav { display:flex; align-items:center; justify-content:space-between; padding:13px 0; }
+  .brand { display:flex; align-items:center; gap:10px; text-decoration:none; }
+  .brand .shop { width:40px; height:40px; border-radius:12px; background:linear-gradient(145deg,var(--green),var(--green-dark)); display:grid; place-items:center; color:#fff; font-size:1.15rem; }
+  .brand b { font-family:Georgia,serif; font-size:1.25rem; color:var(--green-dark); display:block; line-height:1.05; }
+  .brand small { color:var(--muted); font-size:.68rem; letter-spacing:.16em; text-transform:uppercase; }
+  nav.links { display:flex; gap:24px; }
+  nav.links a { color:var(--ink); text-decoration:none; font-weight:600; font-size:.92rem; opacity:.85; }
+  nav.links a:hover { opacity:1; color:var(--green); }
+  .btn { display:inline-block; background:var(--green); color:#fff; text-decoration:none; font-weight:700; padding:13px 28px; border-radius:999px; transition:.15s; border:none; cursor:pointer; font-size:.97rem; box-shadow:0 6px 16px rgba(30,107,79,.3); }
+  .btn:hover { background:var(--green-dark); transform:translateY(-2px); }
+  .btn.tomato { background:var(--tomato); box-shadow:0 6px 16px rgba(217,79,53,.3); }
+
+  .hero { padding:64px 0 50px; background:linear-gradient(170deg,var(--sand),var(--cream)); }
+  .hero-grid { display:grid; grid-template-columns:1.1fr .9fr; gap:44px; align-items:center; }
+  .open-badge { display:inline-flex; align-items:center; gap:8px; background:#e8f3ec; border:1px solid var(--green); color:var(--green-dark); border-radius:999px; padding:7px 16px; font-size:.83rem; font-weight:700; margin-bottom:16px; }
+  .open-badge::before { content:""; width:9px; height:9px; border-radius:50%; background:var(--green); animation:pulse 2s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.35} }
+  h1 { font-size:clamp(2.1rem,4.4vw,3.3rem); margin-bottom:14px; }
+  .lede { color:var(--muted); font-size:1.05rem; max-width:32em; margin-bottom:24px; }
+  .hero-facts { display:flex; gap:18px; flex-wrap:wrap; font-size:.88rem; color:var(--muted); }
+  .hero-facts span::before { content:"✓ "; color:var(--green); font-weight:800; }
+  .hero-card { background:var(--white); border-radius:18px; padding:30px; box-shadow:0 14px 36px rgba(30,107,79,.14); }
+  .hero-card h3 { font-size:1.15rem; margin-bottom:12px; }
+  .hours td { padding:6px 0; font-size:.93rem; width:100%; }
+  .hours td:last-child { text-align:right; font-weight:700; color:var(--green-dark); }
+
+  section { padding:62px 0; }
+  .head { text-align:center; max-width:44em; margin:0 auto 36px; }
+  .head h2 { font-size:clamp(1.7rem,3vw,2.3rem); margin-bottom:10px; }
+  .head p { color:var(--muted); }
+
+  .tabs { display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin-bottom:26px; }
+  .tab { font-family:inherit; font-size:.92rem; font-weight:700; padding:10px 22px; border-radius:999px; border:1.5px solid rgba(30,107,79,.35); background:#fff; color:var(--green-dark); cursor:pointer; transition:.18s; }
+  .tab:hover { transform:translateY(-2px); }
+  .tab.active { background:var(--green); color:#fff; border-color:var(--green); box-shadow:0 6px 14px rgba(30,107,79,.28); }
+
+  .slider-shell { position:relative; max-width:980px; margin:0 auto; }
+  .slider-viewport { overflow:hidden; border-radius:16px; }
+  .track { display:flex; transition:transform .45s cubic-bezier(.22,.8,.3,1); }
+  .p { flex:0 0 25%; padding:8px; }
+  .p-in { background:#fff; border-radius:14px; height:100%; aspect-ratio:1/1; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:14px 10px; box-shadow:0 6px 16px rgba(43,42,36,.08); border:1px solid rgba(30,107,79,.1); transition:transform .2s, box-shadow .2s; }
+  .p-in:hover { transform:translateY(-6px); box-shadow:0 14px 28px rgba(43,42,36,.14); }
+  .p .pic { font-size:2.6rem; line-height:1; margin-bottom:10px; transition:transform .25s; }
+  .p-in:hover .pic { transform:scale(1.18) rotate(-4deg); }
+  .p b { font-size:.92rem; line-height:1.25; color:var(--ink); }
+  .p .price { margin-top:6px; font-weight:800; color:var(--tomato); font-size:.95rem; }
+  .arrow { position:absolute; top:50%; transform:translateY(-50%); width:48px; height:48px; border-radius:50%; border:none; background:var(--white); color:var(--green-dark); font-size:1.3rem; cursor:pointer; box-shadow:0 8px 20px rgba(43,42,36,.18); z-index:5; transition:.15s; display:grid; place-items:center; }
+  .arrow:hover { background:var(--green); color:#fff; }
+  .arrow.prev { left:-14px; }
+  .arrow.next { right:-14px; }
+  .dots { display:flex; gap:8px; justify-content:center; margin-top:20px; }
+  .dot { width:10px; height:10px; border-radius:50%; border:none; background:rgba(30,107,79,.25); cursor:pointer; transition:.2s; padding:0; }
+  .dot.active { background:var(--green); transform:scale(1.3); }
+  .count-note { text-align:center; color:var(--muted); font-size:.82rem; margin-top:12px; }
+
+  .services-band { background:var(--green); color:#eaf4ee; padding:38px 0; }
+  .chips { display:flex; gap:12px; flex-wrap:wrap; justify-content:center; }
+  .chip { background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.25); border-radius:999px; padding:9px 20px; font-size:.9rem; font-weight:600; }
+
+  .info-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+  .info-card { background:#fff; border-radius:14px; padding:26px; box-shadow:0 8px 22px rgba(43,42,36,.08); }
+  .info-card h3 { margin-bottom:10px; font-size:1.1rem; }
+  .info-card p { color:var(--muted); font-size:.93rem; }
+
+  .specials { background:var(--sand); }
+  form.spec-form { background:#fff; border-radius:16px; padding:30px; max-width:540px; margin:0 auto; display:grid; gap:14px; box-shadow:0 12px 30px rgba(43,42,36,.1); }
+  .spec-form label { font-size:.78rem; font-weight:800; color:var(--green-dark); text-transform:uppercase; letter-spacing:.08em; }
+  .spec-form input { width:100%; padding:12px 16px; border-radius:10px; border:1.5px solid rgba(30,107,79,.25); font-size:.97rem; font-family:inherit; }
+
+  footer { background:var(--green-dark); color:#cfe4d8; padding:36px 0 26px; font-size:.88rem; }
+  .foot-flex { display:flex; justify-content:space-between; flex-wrap:wrap; gap:14px; margin-bottom:16px; }
+  footer a { color:#fff; text-decoration:none; }
+  .fine { border-top:1px solid rgba(255,255,255,.15); padding-top:16px; font-size:.78rem; }
+
+  .reveal { opacity:0; transform:translateY(24px); transition:opacity .7s ease, transform .7s ease; }
+  .reveal.visible { opacity:1; transform:none; }
+  @media (prefers-reduced-motion:reduce) { .reveal{opacity:1;transform:none;transition:none} .track{transition:none} }
+
+  @media(max-width:880px){ nav.links{display:none;} .hero-grid{grid-template-columns:1fr;} .info-grid{grid-template-columns:1fr;} .p{flex:0 0 50%;} .arrow.prev{left:4px;} .arrow.next{right:4px;} }
+</style>
+</head>
+<body>
+
+<div class="topbar">🥧 Fresh pies daily · Lotto &amp; EFTPOS in store · Open 7 days till 9pm</div>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="#">
+      <span class="shop">🏪</span>
+      <span><b>Grenada Superette</b><small>Your local dairy · Forrest Hill</small></span>
+    </a>
+    <nav class="links"><a href="#aisles">Shop Aisles</a><a href="#visit">Hours &amp; Location</a><a href="#specials">Weekly Specials</a></nav>
+    <a class="btn" href="#visit" style="padding:11px 22px; font-size:.9rem;">Visit Us</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="open-badge">Open now · Closes 9pm tonight</span>
+      <h1>Everything you need, two minutes from home.</h1>
+      <p class="lede">Fresh pies in the warmer, cold drinks in the chiller, and the lolly aisle your kids already know about. Grenada Superette has been Forrest Hill's corner store for everything forgotten and everything craved.</p>
+      <div class="hero-facts">
+        <span>Pies warmed on request</span><span>Weekly specials</span><span>Lotto</span><span>Ice &amp; firewood</span>
+      </div>
+    </div>
+    <div class="hero-card">
+      <h3>🕒 Store Hours</h3>
+      <table class="hours">
+        <tr><td>Monday – Friday</td><td>7:00am – 9:00pm</td></tr>
+        <tr><td>Saturday</td><td>8:00am – 9:00pm</td></tr>
+        <tr><td>Sunday</td><td>8:00am – 8:00pm</td></tr>
+        <tr><td>Public Holidays</td><td>9:00am – 6:00pm</td></tr>
+      </table>
+      <p style="font-size:.85rem; color:var(--muted); margin-top:10px;">🅿️ Free parking right outside · ATM inside</p>
+    </div>
+  </div>
+</section>
+
+<section id="aisles" style="background:#fff;">
+  <div class="wrap">
+    <div class="head">
+      <h2>Walk The Aisles</h2>
+      <p>A peek at the shelves — 100+ everyday items across five aisles. Swipe or use the arrows.</p>
+    </div>
+    <div class="tabs" id="tabs">
+      <button class="tab active" data-cat="drinks">🥤 Drinks</button>
+      <button class="tab" data-cat="hot">🥧 Hot Food</button>
+      <button class="tab" data-cat="candy">🍬 Candy</button>
+      <button class="tab" data-cat="whole">🥑 Wholefoods</button>
+      <button class="tab" data-cat="snacks">🍿 Snacks</button>
+    </div>
+    <div class="slider-shell">
+      <button class="arrow prev" id="prev" aria-label="Previous products">←</button>
+      <div class="slider-viewport">
+        <div class="track" id="track"></div>
+      </div>
+      <button class="arrow next" id="next" aria-label="Next products">→</button>
+      <div class="dots" id="dots"></div>
+      <p class="count-note" id="countNote"></p>
+    </div>
+  </div>
+</section>
+
+<div class="services-band">
+  <div class="wrap chips">
+    <span class="chip">🎫 Lotto &amp; Instant Kiwi</span>
+    <span class="chip">💳 EFTPOS &amp; Paywave</span>
+    <span class="chip">🧊 Ice &amp; Firewood</span>
+    <span class="chip">🥛 Milk &amp; Bread Daily</span>
+    <span class="chip">📰 Newspapers</span>
+    <span class="chip">🏧 ATM</span>
+  </div>
+</div>
+
+<section id="visit">
+  <div class="wrap">
+    <div class="head"><h2>Visit The Shop</h2><p>Corner of Grenada &amp; Forrest Hill Road (demo address) — look for the green awning.</p></div>
+    <div class="info-grid">
+      <div class="info-card"><h3>📍 Address</h3><p>142 Grenada Avenue<br>Forrest Hill, Auckland 0620<br><br>Two minutes from the motorway on-ramp, next to the hairdresser.</p></div>
+      <div class="info-card"><h3>🕒 Open 7 Days</h3><p>Mon–Fri 7am–9pm<br>Sat 8am–9pm · Sun 8am–8pm<br><br>Extended hours over summer and holiday periods.</p></div>
+      <div class="info-card"><h3>📞 Get In Touch</h3><p>(09) 555 0155<br><br>Special orders, catering trays and school-lunch runs — flick us a message and we'll have it ready.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="specials" id="specials">
+  <div class="wrap">
+    <div class="head"><h2>Weekly Specials, Straight To Your Phone</h2><p>Join the locals list — we text the week's deals every Monday morning. No spam, one message a week.</p></div>
+    <form class="spec-form" action="https://formspree.io/f/mdenvrwl" method="POST">
+      <input type="hidden" name="_subject" value="SPECIALS SIGNUP - Grenada Superette">
+      <div><label>Your Name</label><input type="text" name="name" placeholder="Jane" required></div>
+      <div><label>Mobile Number</label><input type="tel" name="phone" placeholder="021 555 0000" required></div>
+      <button class="btn tomato" type="submit" style="width:100%;">Add Me To The Locals List</button>
+      <p style="font-size:.8rem; color:var(--muted); text-align:center; margin:0;">One text a week with the deals. Unsubscribe anytime, in person or by reply.</p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-flex">
+      <div><b style="color:#fff;">Grenada Superette 🏪</b><br>142 Grenada Avenue, Forrest Hill, Auckland (demo)<br>(09) 555 0155 · Open 7 days</div>
+      <div><a href="#aisles">Shop Aisles</a> · <a href="#visit">Visit</a> · <a href="#specials">Weekly Specials</a></div>
+    </div>
+    <div class="fine">Demo website build · © 2026 Grenada Superette — template by Web Co-Create</div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var P = {
+    drinks: [["Coke 1.5L","$4.50","🥤"],["L&P 600ml","$3.50","🍋"],["Pepsi 1.5L","$4.00","🥤"],["Sprite 600ml","$3.50","🥤"],["Fanta 600ml","$3.50","🍊"],["Pump Water 750ml","$3.00","💧"],["Fresh Up Apple","$4.20","🧃"],["Fresh Milk 1L","$3.80","🥛"],["Chocolate Milk 500ml","$4.00","🥛"],["V Energy 500ml","$4.50","⚡"],["Red Bull 250ml","$4.90","⚡"],["Mother 500ml","$4.50","⚡"],["Powerade 1L","$5.00","🥤"],["Coke Zero 600ml","$3.50","🥤"],["Ginger Beer 600ml","$3.50","🫚"],["Sparkling Water 1L","$2.50","💧"],["Iced Coffee","$4.20","☕"],["Kombucha","$5.50","🫖"],["Iced Tea Lemon","$3.50","🍋"],["Coconut Water","$4.90","🥥"]],
+    hot: [["Steak & Cheese Pie","$5.00","🥧"],["Mince & Cheese Pie","$5.00","🥧"],["Butter Chicken Pie","$5.50","🥧"],["Sausage Roll","$3.50","🌭"],["Classic Hot Dog","$4.00","🌭"],["American Hot Dog","$5.50","🌭"],["Hot Chips Small","$4.00","🍟"],["Ham & Cheese Toastie","$5.50","🥪"],["Bacon Bun","$5.00","🥓"],["Chicken Wrap","$6.50","🌯"],["Butter Chicken & Rice","$9.90","🍛"],["Mac & Cheese Pot","$7.50","🧀"],["Pizza Slice","$4.50","🍕"],["Garlic Bread","$4.00","🥖"],["Corn Dog","$4.50","🌽"],["Potato Top Pie","$5.50","🥔"],["Steak & Kidney Pie","$5.00","🥧"],["Veggie Patch Pie","$5.00","🥬"],["Hash Bites","$3.50","🥔"],["Spring Rolls 2pk","$4.00","🥟"]],
+    candy: [["Pineapple Lumps 200g","$3.50","🍬"],["Jaffas 200g","$3.50","🟠"],["Milk Bottles","$3.50","🍬"],["Wine Gums","$3.50","🍬"],["Jelly Beans","$3.20","🫘"],["Lolly Cake Slice","$3.00","🍰"],["Moro Bar","$3.00","🍫"],["Picnic Bar","$3.00","🍫"],["Flake","$3.20","🍫"],["Twix","$3.20","🍫"],["Snickers","$3.50","🍫"],["Maltesers","$4.50","⚪"],["Skittles","$3.00","🌈"],["Sour Worms","$3.20","🐛"],["Gummy Bears","$3.20","🐻"],["Chocolate Fish","$2.50","🐟"],["Perky Nana","$2.50","🍌"],["Buzz Bar","$3.50","🍫"],["Chupa Chups 3pk","$2.50","🍭"],["Rainbow Pops","$2.00","🍭"]],
+    whole: [["Bananas per kg","$3.50","🍌"],["Apples per kg","$4.50","🍎"],["Oranges per kg","$4.20","🍊"],["Free-Range Eggs 6pk","$5.50","🥚"],["Mixed Nuts 250g","$6.50","🥜"],["Almonds 250g","$7.50","🌰"],["Muesli Bars 6pk","$5.90","🍫"],["Rolled Oats 900g","$5.50","🥣"],["Wholegrain Bread","$4.80","🍞"],["Brown Rice 1kg","$5.50","🍚"],["Greek Yogurt 500g","$6.50","🥛"],["Honey 500g","$9.90","🍯"],["Peanut Butter","$6.90","🥜"],["Avocados 2pk","$4.50","🥑"],["Kiwifruit 4pk","$3.50","🥝"],["Tomatoes per kg","$6.90","🍅"],["Salad Mix 150g","$4.50","🥗"],["Chia Seeds 250g","$6.50","🌱"],["Dates 250g","$6.90","🌴"],["Oat Milk 1L","$4.90","🌾"]],
+    snacks: [["Ready Salted Chips","$3.50","🥔"],["Chicken Chips","$3.50","🍗"],["Rashuns","$3.50","🧀"],["Twisties","$3.50","🌀"],["Burger Rings","$3.50","🍔"],["Pringles Small","$4.50","🥫"],["Doritos Cheese","$4.50","🔺"],["Corn Chips Salsa","$4.50","🌽"],["Pretzels","$3.50","🥨"],["Popcorn 90g","$3.50","🍿"],["Salted Peanuts","$3.50","🥜"],["Cookie Time Cookie","$3.90","🍪"],["Ginger Nuts","$3.20","🍪"],["Choc Biscuits","$4.20","🍫"],["Crackers 250g","$3.90","🍘"],["Rice Crackers","$3.50","🍘"],["Cheese Snack Pack","$3.50","🧀"],["Beef Jerky 50g","$6.90","🥩"],["Trail Mix","$4.50","🥜"],["Instant Noodles","$2.50","🍜"]]
+  };
+  var cats = Object.keys(P), cat = cats[0], idx = 0, perView = 4;
+  var track = document.getElementById('track'), dots = document.getElementById('dots'), note = document.getElementById('countNote');
+  function perViewNow() { return window.innerWidth <= 600 ? 2 : (window.innerWidth <= 880 ? 3 : 4); }
+  function render() {
+    perView = perViewNow();
+    track.innerHTML = P[cat].map(function (p) {
+      return '<div class="p"><div class="p-in"><div class="pic">' + p[2] + '</div><b>' + p[0] + '</b><span class="price">' + p[1] + '</span></div></div>';
+    }).join('');
+    var pages = Math.ceil(P[cat].length / perView);
+    dots.innerHTML = '';
+    for (var i = 0; i < pages; i++) {
+      var d = document.createElement('button');
+      d.className = 'dot' + (i === 0 ? ' active' : '');
+      d.setAttribute('aria-label', 'Page ' + (i + 1));
+      d.dataset.page = i;
+      dots.appendChild(d);
+    }
+    idx = 0;
+    update();
+  }
+  function update() {
+    perView = perViewNow();
+    var max = P[cat].length - perView;
+    if (idx > max) idx = max; if (idx < 0) idx = 0;
+    track.style.transform = 'translateX(-' + (idx * (100 / perView)) + '%)';
+    var page = Math.round(idx / perView);
+    dots.querySelectorAll('.dot').forEach(function (d, i) { d.classList.toggle('active', i === page); });
+    note.textContent = 'Aisle ' + cat.charAt(0).toUpperCase() + cat.slice(1) + ' · showing ' + perView + ' of ' + P[cat].length + ' items';
+  }
+  document.getElementById('prev').addEventListener('click', function () { idx = (idx <= 0) ? P[cat].length - perView : idx - 1; update(); });
+  document.getElementById('next').addEventListener('click', function () { var max = P[cat].length - perView; idx = (idx >= max) ? 0 : idx + 1; update(); });
+  dots.addEventListener('click', function (e) { if (e.target.classList.contains('dot')) { idx = parseInt(e.target.dataset.page, 10) * perView; update(); } });
+  document.getElementById('tabs').addEventListener('click', function (e) {
+    if (!e.target.classList.contains('tab')) return;
+    document.querySelectorAll('.tab').forEach(function (t) { t.classList.remove('active'); });
+    e.target.classList.add('active');
+    cat = e.target.dataset.cat;
+    render();
+  });
+  var sx = null;
+  track.addEventListener('touchstart', function (e) { sx = e.touches[0].clientX; }, { passive: true });
+  track.addEventListener('touchend', function (e) {
+    if (sx === null) return;
+    var dx = e.changedTouches[0].clientX - sx;
+    if (dx < -40) { var max = P[cat].length - perView; idx = (idx >= max) ? 0 : idx + 1; update(); }
+    else if (dx > 40) { idx = (idx <= 0) ? P[cat].length - perView : idx - 1; update(); }
+    sx = null;
+  }, { passive: true });
+  window.addEventListener('resize', update);
+  render();
+
+  var sel = '.head,.hero-grid>div,.hero-card,.info-card,.spec-form,.chips .chip,.tab';
+  var els = document.querySelectorAll(sel);
+  els.forEach(function (e) { e.classList.add('reveal'); });
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (en) { en.forEach(function (x) { if (x.isIntersecting) { x.target.classList.add('visible'); io.unobserve(x.target); } }); }, { threshold: .12 });
+    els.forEach(function (e) { io.observe(e); });
+  } else { els.forEach(function (e) { e.classList.add('visible'); }); }
+})();
+</script>
+</body>
+</html>
