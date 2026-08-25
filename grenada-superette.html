@@ -46,7 +46,7 @@
   .hero { padding:64px 0 50px; background:linear-gradient(170deg,var(--sand),var(--cream)); }
   .hero-grid { display:grid; grid-template-columns:1.1fr .9fr; gap:44px; align-items:center; }
   .open-badge { display:inline-flex; align-items:center; gap:8px; background:#e8f3ec; border:1px solid var(--green); color:var(--green-dark); border-radius:999px; padding:7px 16px; font-size:.83rem; font-weight:700; margin-bottom:16px; }
-  .open-badge::before { content:""; width:9px; height:9px; border-radius:50%; background:var(--green); animation:pulse 2s infinite; }
+  .open-badge.closed{background:#fbe9e4;border-color:var(--tomato);color:#a03322}.open-badge.closed::before{background:var(--tomato);animation:none}.open-badge::before { content:""; width:9px; height:9px; border-radius:50%; background:var(--green); animation:pulse 2s infinite; }
   @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.35} }
   h1 { font-size:clamp(2.1rem,4.4vw,3.3rem); margin-bottom:14px; }
   .lede { color:var(--muted); font-size:1.05rem; max-width:32em; margin-bottom:24px; }
@@ -114,7 +114,7 @@
 </head>
 <body>
 
-<div class="topbar">🥧 Fresh pies daily · Lotto &amp; EFTPOS in store · Open 7 days till 9pm</div>
+<div class="topbar">🥧 Fresh pies daily · Lotto &amp; EFTPOS in store · Open 7 days till 7:30pm</div>
 
 <header class="site">
   <div class="wrap nav">
@@ -289,5 +289,32 @@
   } else { els.forEach(function (e) { e.classList.add('visible'); }); }
 })();
 </script>
+<script>
+(function(){
+  var b=document.getElementById('openBadge');
+  if(!b)return;
+  function nz(){
+    try{
+      var p={};
+      new Intl.DateTimeFormat('en-NZ',{timeZone:'Pacific/Auckland',weekday:'short',hour:'numeric',minute:'numeric',hour12:false}).formatToParts(new Date()).forEach(function(x){p[x.type]=x.value});
+      return {d:p.weekday,m:(parseInt(p.hour,10)*60)+parseInt(p.minute,10)};
+    }catch(e){return null}
+  }
+  var open={Mon:420,Tue:420,Wed:420,Thu:420,Fri:420,Sat:480,Sun:480},close=1170;
+  function label(t){
+    if(t>=open.Mon&&t<close){b.classList.remove('closed');b.textContent='Open now � Closes 7:30pm today';return}
+    b.classList.add('closed');
+    var nextOpen=(t<close)?null:true;
+    var days=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+    var d=nz().d,di=days.indexOf(d);
+    var tomorrow=days[(di+1)%7];
+    var openTxt=open[tomorrow]===420?'7:00am':'8:00am';
+    b.textContent='Closed now � Opens '+openTxt+' '+(t>=close?'tomorrow':'in the morning');
+  }
+  var t=nz();
+  if(t){label(t.m)}else{b.textContent='Open 7 days � 7am to 7:30pm'}
+})();
+</script>
 </body>
 </html>
+
