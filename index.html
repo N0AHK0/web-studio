@@ -81,6 +81,9 @@
   .th1 { background:linear-gradient(135deg,#4a6b3a,#a9744f); }
   .th2 { background:linear-gradient(135deg,#c68a53,#9e2b25); }
   .th3 { background:linear-gradient(135deg,#d48ba3,#5b2333); }
+  .th4 { background:linear-gradient(135deg,#7c4a9e,#2b1d4e); }
+  .th5 { background:linear-gradient(135deg,#2e8b8b,#0f2d40); }
+  .th6 { background:linear-gradient(135deg,#d94f2b,#7a2d12); }
   .cap { padding:16px 18px; }
   .cap b { display:block; font-size:.98rem; }
   .cap span { color:var(--muted); font-size:.82rem; }
@@ -102,8 +105,11 @@
   .foot-flex { display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; }
 
   @media(max-width:880px){ nav.links{display:none;} .grid3,.pricing,.folio,.steps{grid-template-columns:1fr;} .stats{gap:22px;} }
-</style>
-</head>
+  .reveal { opacity:0; transform:translateY(26px); transition:opacity .7s ease, transform .7s ease; }
+  .reveal.visible { opacity:1; transform:none; }
+  .btn, .card, .plan, .shot { will-change:transform; }
+  @media (prefers-reduced-motion: reduce) { .reveal { opacity:1; transform:none; transition:none; } }
+</style></head>
 <body>
 
 <header class="site">
@@ -124,9 +130,9 @@
       <a class="btn outline" href="#work">See Recent Work</a>
     </div>
     <div class="stats">
-      <div class="stat"><b>7 days</b><span>Average build time</span></div>
-      <div class="stat"><b>$299+</b><span>Fixed-price one-pagers</span></div>
-      <div class="stat"><b>100%</b><span>You own everything outright</span></div>
+      <div class="stat"><b data-count="7">0</b><span>Days average build time</span></div>
+      <div class="stat"><b data-count="299" data-prefix="$" data-suffix="+">$0+</b><span>Fixed-price one-pagers</span></div>
+      <div class="stat"><b data-count="100" data-suffix="%">0%</b><span>You own everything outright</span></div>
     </div>
   </div>
 </section>
@@ -152,6 +158,9 @@
       <a class="shot" href="landscaping.html"><div class="thumb th1"></div><div class="cap"><b>Tui &amp; Timber Landscapes</b><span>Trades · quote form · gallery</span></div></a>
       <a class="shot" href="cafe.html"><div class="thumb th2"></div><div class="cap"><b>Rata &amp; Co. Coffee</b><span>Hospitality · menu · hours &amp; map</span></div></a>
       <a class="shot" href="salon.html"><div class="thumb th3"></div><div class="cap"><b>Fern &amp; Fringe Hair Studio</b><span>Beauty · price list · booking CTA</span></div></a>
+      <a class="shot" href="volta-roots.html"><div class="thumb th4"></div><div class="cap"><b>Volta Roots</b><span>E-commerce · product landing page</span></div></a>
+      <a class="shot" href="skippers-fish-chips.html"><div class="thumb th5"></div><div class="cap"><b>Skipper's Fish &amp; Chips</b><span>Takeaways · menu · pickup orders</span></div></a>
+      <a class="shot" href="arohas-kitchen.html"><div class="thumb th6"></div><div class="cap"><b>Aroha's Kitchen</b><span>Home food business · weekly orders</span></div></a>
     </div>
   </div>
 </section>
@@ -246,8 +255,37 @@
   </div>
 </footer>
 
+<script>
+  (function () {
+    var targets = document.querySelectorAll('.head, .card, .plan, .shot, .stp, .faq details, .hero .pill, .hero h1, .hero .lede, .cta-row, .stats .stat, .contact-band .wrap > *, .steps');
+    targets.forEach(function (el) { el.classList.add('reveal'); });
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    targets.forEach(function (el) { io.observe(el); });
+    var counters = document.querySelectorAll('[data-count]');
+    var cio = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        var el = e.target, end = parseInt(el.dataset.count, 10), pre = el.dataset.prefix || '', suf = el.dataset.suffix || '', t0 = null;
+        cio.unobserve(el);
+        function tick(ts) {
+          if (!t0) t0 = ts;
+          var p = Math.min((ts - t0) / 1200, 1);
+          el.textContent = pre + Math.floor(end * (1 - Math.pow(1 - p, 3))).toLocaleString() + suf;
+          if (p < 1) requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+      });
+    }, { threshold: 0.4 });
+    counters.forEach(function (el) { cio.observe(el); });
+  })();
+</script>
 </body>
 </html>
+
+
+
 
 
 
