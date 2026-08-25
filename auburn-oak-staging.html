@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Auburn &amp; Oak — Home Staging Auckland | Demo</title>
+<meta name="description" content="Considered home staging for Auckland sellers, agents and developers. Full and partial staging, pre-sale consultations and moving support. Editorial styling that photographs beautifully.">
+<meta property="og:title" content="Auburn &amp; Oak — Home Staging Auckland">
+<meta property="og:description" content="Editorial home staging for sellers, agents and developers across Auckland.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<style>
+  :root {
+    --linen: #f6f2ea;
+    --paper: #efe9dd;
+    --clay: #b98a63;
+    --clay-dark: #96683f;
+    --sage: #7d8471;
+    --ink: #2e2a25;
+    --soft: #6f675c;
+    --line: rgba(46,42,37,.14);
+    --white: #fff;
+    --serif: Georgia, 'Times New Roman', serif;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { font-family:var(--serif); background:var(--linen); color:var(--ink); line-height:1.7; font-size:17px; }
+  .wrap { width:min(1120px,92%); margin:0 auto; }
+  h1,h2,h3 { font-weight:400; letter-spacing:-.01em; line-height:1.18; }
+  .sans { font-family:'Segoe UI', system-ui, sans-serif; }
+
+  header.site { position:sticky; top:0; z-index:50; background:rgba(246,242,234,.95); backdrop-filter:blur(10px); border-bottom:1px solid var(--line); }
+  .nav { display:flex; align-items:center; justify-content:space-between; padding:18px 0; }
+  .logo { font-family:var(--serif); font-size:1.35rem; color:var(--ink); text-decoration:none; letter-spacing:.02em; }
+  .logo i { font-style:italic; color:var(--clay); }
+  nav.links { display:flex; gap:30px; }
+  nav.links a { font-family:'Segoe UI',system-ui,sans-serif; font-size:.85rem; color:var(--soft); text-decoration:none; letter-spacing:.04em; }
+  nav.links a:hover { color:var(--ink); }
+  .btn { display:inline-block; font-family:'Segoe UI',system-ui,sans-serif; background:var(--ink); color:var(--linen); text-decoration:none; font-size:.88rem; font-weight:600; padding:13px 26px; border-radius:999px; transition:.2s; border:none; cursor:pointer; letter-spacing:.03em; }
+  .btn:hover { background:var(--clay-dark); }
+  .btn.line { background:transparent; color:var(--ink); border:1px solid var(--ink); }
+  .btn.line:hover { background:var(--ink); color:var(--linen); }
+  .tel { font-family:'Segoe UI',system-ui,sans-serif; font-size:.85rem; color:var(--soft); text-decoration:none; }
+  .tel:hover { color:var(--ink); }
+
+  .hero { padding:64px 0 80px; }
+  .hero-media { height:440px; border-radius:4px; background:linear-gradient(115deg,#e5dccb 0%,#d4c3a8 30%,#b98a63 62%,#8a6a4b 100%); position:relative; overflow:hidden; margin-bottom:44px; }
+  .hero-media::after { content:""; position:absolute; inset:0; background:radial-gradient(ellipse at 70% 30%, rgba(255,255,255,.35), transparent 55%); }
+  .hero-media span { position:absolute; bottom:20px; left:24px; font-family:'Segoe UI',system-ui,sans-serif; font-size:.78rem; letter-spacing:.22em; text-transform:uppercase; color:rgba(255,255,255,.9); }
+  .hero h1 { font-size:clamp(2.4rem,5vw,4rem); max-width:16em; margin-bottom:20px; }
+  .hero p.lede { font-size:1.15rem; color:var(--soft); max-width:34em; margin-bottom:32px; }
+  .cta-row { display:flex; gap:14px; flex-wrap:wrap; }
+
+  .kicker { font-family:'Segoe UI',system-ui,sans-serif; font-size:.74rem; letter-spacing:.24em; text-transform:uppercase; color:var(--clay); margin-bottom:16px; display:block; }
+  h2 { font-size:clamp(1.9rem,3.4vw,2.7rem); max-width:22em; margin-bottom:16px; }
+  section { padding:84px 0; }
+  .muted { color:var(--soft); max-width:38em; font-size:1.05rem; }
+
+  .split { display:grid; grid-template-columns:.9fr 1.1fr; gap:64px; align-items:center; }
+  .split .visual { height:420px; border-radius:4px; background:linear-gradient(150deg,#ddd2bd,#c9b391 55%,#a98a63); }
+
+  .aud-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:28px; margin-top:52px; }
+  .aud { background:var(--white); border:1px solid var(--line); border-radius:4px; overflow:hidden; transition:.25s; }
+  .aud:hover { transform:translateY(-4px); box-shadow:0 18px 40px rgba(46,42,37,.1); }
+  .aud .img { height:170px; }
+  .a1 { background:linear-gradient(140deg,#e8dfd0,#c9b391 60%,#96683f); }
+  .a2 { background:linear-gradient(140deg,#d8d5c8,#a8ab97 55%,#7d8471); }
+  .a3 { background:linear-gradient(140deg,#e0d6c6,#c39a76 55%,#8a6242); }
+  .aud-body { padding:24px 26px 28px; }
+  .num { font-family:'Segoe UI',system-ui,sans-serif; font-size:.78rem; letter-spacing:.2em; color:var(--clay); display:block; margin-bottom:10px; }
+  .aud h3 { font-size:1.3rem; margin-bottom:10px; }
+  .aud p { color:var(--soft); font-size:.95rem; margin-bottom:16px; }
+  .aud a { font-family:'Segoe UI',system-ui,sans-serif; font-size:.85rem; color:var(--clay-dark); text-decoration:none; font-weight:600; }
+  .aud a:hover { text-decoration:underline; }
+
+  .svc-list { border-top:1px solid var(--line); }
+  .svc-row { display:grid; grid-template-columns:70px 1fr 2fr auto; gap:28px; align-items:baseline; padding:34px 0; border-bottom:1px solid var(--line); transition:.2s; }
+  .svc-row:hover { background:rgba(185,138,99,.05); }
+  .svc-row .n { font-family:'Segoe UI',system-ui,sans-serif; font-size:.85rem; color:var(--clay); letter-spacing:.15em; }
+  .svc-row h3 { font-size:1.45rem; }
+  .svc-row p { color:var(--soft); font-size:.98rem; }
+  .svc-row a { font-family:'Segoe UI',system-ui,sans-serif; font-size:.85rem; color:var(--ink); white-space:nowrap; }
+
+  .folio { display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+  .folio figure { margin:0; }
+  .folio .img { height:250px; border-radius:4px; margin-bottom:12px; transition:.25s; }
+  .folio figure:hover .img { transform:scale(1.015); }
+  .f1 { background:linear-gradient(160deg,#e3d8c4,#c4a87e 55%,#8f6d48); }
+  .f2 { background:linear-gradient(160deg,#d6d3c4,#9ea38b 55%,#6e755f); }
+  .f3 { background:linear-gradient(160deg,#e9e0d2,#d0b491 55%,#a07a52); }
+  .folio figcaption { font-family:'Segoe UI',system-ui,sans-serif; font-size:.8rem; letter-spacing:.18em; text-transform:uppercase; color:var(--soft); }
+
+  .steps { display:grid; grid-template-columns:repeat(4,1fr); gap:30px; }
+  .step .num { margin-bottom:14px; }
+  .step h3 { font-size:1.25rem; margin-bottom:10px; }
+  .step p { color:var(--soft); font-size:.95rem; }
+  .step { border-top:2px solid var(--clay); padding-top:22px; }
+
+  .quote-band { background:var(--paper); }
+  .quote-grid { display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:start; }
+  form.quote-form { background:var(--white); border:1px solid var(--line); border-radius:4px; padding:36px; display:grid; gap:16px; }
+  .quote-form label { font-family:'Segoe UI',system-ui,sans-serif; font-size:.74rem; letter-spacing:.16em; text-transform:uppercase; color:var(--soft); }
+  .quote-form input, .quote-form select, .quote-form textarea { width:100%; padding:13px 16px; border:1px solid rgba(46,42,37,.25); border-radius:3px; font-family:'Segoe UI',system-ui,sans-serif; font-size:.95rem; background:var(--linen); }
+  .quote-form .two { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+
+  footer { background:var(--ink); color:#cfc7bb; padding:60px 0 34px; font-size:.92rem; }
+  .foot-grid { display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:40px; margin-bottom:44px; }
+  footer h4 { font-family:'Segoe UI',system-ui,sans-serif; font-size:.74rem; letter-spacing:.2em; text-transform:uppercase; color:#8f867a; margin-bottom:16px; }
+  footer a { color:#e6dfd4; text-decoration:none; display:block; margin-bottom:10px; font-size:.92rem; }
+  footer a:hover { color:#fff; }
+  .fine { border-top:1px solid rgba(255,255,255,.12); padding-top:22px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; font-size:.8rem; color:#8f867a; }
+
+  @media(max-width:920px){
+    nav.links, .tel { display:none; }
+    .split, .quote-grid { grid-template-columns:1fr; gap:40px; }
+    .aud-grid, .folio, .steps { grid-template-columns:1fr 1fr; }
+    .svc-row { grid-template-columns:50px 1fr; gap:10px 20px; }
+    .svc-row p { grid-column:2; }
+    .svc-row a { grid-column:2; }
+    .foot-grid { grid-template-columns:1fr 1fr; }
+  }
+  @media(max-width:600px){ .aud-grid,.folio,.steps,.foot-grid{grid-template-columns:1fr;} .quote-form .two{grid-template-columns:1fr;} section{padding:60px 0;} }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="logo" href="#">Auburn <i>&amp;</i> Oak</a>
+    <nav class="links">
+      <a href="#audiences">Who we style for</a>
+      <a href="#services">Services</a>
+      <a href="#work">Portfolio</a>
+      <a href="#process">How it works</a>
+    </nav>
+    <a class="tel" href="tel:095550190">09 555 0190</a>
+    <a class="btn" href="#quote">Get a free quote</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-media"><span>Home staging · Auckland</span></div>
+    <h1>Make space for the right first impression.</h1>
+    <p class="lede">Considered home staging for sellers, agents and developers who want every room to feel clear, memorable and ready for market.</p>
+    <div class="cta-row">
+      <a class="btn" href="#quote">Get a free quote on your project</a>
+      <a class="btn line" href="#work">View our work</a>
+    </div>
+  </div>
+</section>
+
+<section id="audiences" style="padding-top:20px;">
+  <div class="wrap">
+    <span class="kicker">Designed around the sale</span>
+    <h2>We style for the property, the buyer and the campaign.</h2>
+    <p class="muted">Good staging does more than fill empty rooms. It clarifies scale, guides the eye and helps buyers understand how a home could work for them.</p>
+    <div class="aud-grid">
+      <div class="aud">
+        <div class="img a1"></div>
+        <div class="aud-body">
+          <span class="num">01</span>
+          <h3>Homeowners</h3>
+          <p>Prepare a vacant or loved-in home for photography, viewings and a confident market launch.</p>
+          <a href="#quote">Explore home staging →</a>
+        </div>
+      </div>
+      <div class="aud">
+        <div class="img a2"></div>
+        <div class="aud-body">
+          <span class="num">02</span>
+          <h3>Real estate agents</h3>
+          <p>A responsive staging partner who understands campaign dates, access and the details that matter.</p>
+          <a href="#quote">For agents →</a>
+        </div>
+      </div>
+      <div class="aud">
+        <div class="img a3"></div>
+        <div class="aud-body">
+          <span class="num">03</span>
+          <h3>Developers</h3>
+          <p>Considered styling for show homes, display spaces and multi-property releases.</p>
+          <a href="#quote">For developers →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:#fff;">
+  <div class="wrap split">
+    <div>
+      <span class="kicker">The Auburn &amp; Oak approach</span>
+      <h2>Editorial eye. Practical delivery.</h2>
+      <p class="muted" style="margin-bottom:24px;">Every proposal starts with the real property and the real campaign. We consider architecture, light, likely buyers, existing furniture, access and timing before recommending a scope.</p>
+      <p class="muted" style="margin-bottom:28px;">The result is a coherent space that photographs beautifully and still feels natural when buyers walk through the door.</p>
+      <a class="btn line" href="#process">See how it works</a>
+    </div>
+    <div class="visual"></div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <span class="kicker">Services</span>
+    <h2>The right amount of staging for your project.</h2>
+    <p class="muted" style="margin-bottom:48px;">From a complete vacant-home installation to a focused styling consultation, the scope should fit what the property actually needs.</p>
+    <div class="svc-list">
+      <div class="svc-row">
+        <span class="n">01</span>
+        <h3>Full home staging</h3>
+        <p>A complete furniture, art and accessory scheme for vacant properties, installed and collected by our team.</p>
+        <a href="#quote">Full staging →</a>
+      </div>
+      <div class="svc-row">
+        <span class="n">02</span>
+        <h3>Partial home staging</h3>
+        <p>A considered blend of your strongest existing pieces with selected hire furniture and finishing layers.</p>
+        <a href="#quote">Partial staging →</a>
+      </div>
+      <div class="svc-row">
+        <span class="n">03</span>
+        <h3>Pre-sale consultation</h3>
+        <p>Clear, practical advice on editing, placement and presentation before listing photography.</p>
+        <a href="#quote">Consultation →</a>
+      </div>
+      <div class="svc-row">
+        <span class="n">04</span>
+        <h3>Moving support</h3>
+        <p>Furniture placement and setup help when a move needs a thoughtful extra pair of hands.</p>
+        <a href="#quote">Moving services →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="work" style="background:#fff;">
+  <div class="wrap">
+    <span class="kicker">Selected work</span>
+    <h2>Spaces that let the property speak.</h2>
+    <p class="muted" style="margin-bottom:44px;">Layered, calm and proportioned for the room. A selection from the project library. (Placeholder imagery, demo build.)</p>
+    <div class="folio">
+      <figure><div class="img f1"></div><figcaption>Living · Remuera</figcaption></figure>
+      <figure><div class="img f2"></div><figcaption>Detail · Devonport</figcaption></figure>
+      <figure><div class="img f3"></div><figcaption>Dining · Grey Lynn</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="process">
+  <div class="wrap">
+    <span class="kicker">A clear process</span>
+    <h2>From first look to final collection.</h2>
+    <p class="muted" style="margin-bottom:52px;">Scope, timing and handover kept clear, so staging supports the campaign rather than adding uncertainty to it.</p>
+    <div class="steps">
+      <div class="step"><span class="num">01 · Brief</span><h3>Tell us about the property.</h3><p>Location, listing timing, property state and the result you need.</p></div>
+      <div class="step"><span class="num">02 · Plan</span><h3>We shape the right scope.</h3><p>We review rooms, access and existing pieces, then prepare a tailored proposal.</p></div>
+      <div class="step"><span class="num">03 · Install</span><h3>We bring it together.</h3><p>Furniture, art and accessories installed, ready for photography and viewings.</p></div>
+      <div class="step"><span class="num">04 · Collect</span><h3>We close the loop.</h3><p>Collection coordinated around the agreed hire period and campaign dates.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="quote-band" id="quote">
+  <div class="wrap quote-grid">
+    <div>
+      <span class="kicker">Your property, considered</span>
+      <h2>Ready to make buyers feel at home?</h2>
+      <p class="muted" style="margin-bottom:28px;">Tell us about the property and we'll come back within one working day with an indicative scope and pricing. No obligation, no pressure.</p>
+      <p class="muted sans" style="font-size:.95rem;">Prefer to talk? <a href="tel:095550190" style="color:var(--clay-dark);">09 555 0190</a> · hello@auburnoak.demo</p>
+    </div>
+    <form class="quote-form" action="https://formspree.io/f/mdenvrwl" method="POST">
+      <input type="hidden" name="_subject" value="QUOTE REQUEST - Auburn & Oak home staging">
+      <div class="two">
+        <div><label>Your Name</label><input type="text" name="name" placeholder="Jane Bennett" required></div>
+        <div><label>Phone</label><input type="tel" name="phone" placeholder="021 555 0000" required></div>
+      </div>
+      <div><label>Email</label><input type="email" name="_replyto" placeholder="jane@email.com" required></div>
+      <div><label>I Am A</label>
+        <select name="audience"><option>Homeowner preparing to sell</option><option>Real estate agent</option><option>Property developer</option><option>Other</option></select>
+      </div>
+      <div><label>What Do You Need?</label>
+        <select name="service"><option>Full home staging</option><option>Partial home staging</option><option>Pre-sale consultation</option><option>Moving support</option><option>Not sure yet</option></select>
+      </div>
+      <div><label>About The Property</label><textarea name="message" rows="4" placeholder="Suburb, bedrooms, listing timing, vacant or furnished..."></textarea></div>
+      <button class="btn" type="submit">Request My Free Quote</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="logo" href="#" style="color:#fff;">Auburn <i>&amp;</i> Oak</a>
+        <p style="margin-top:14px; color:#8f867a; max-width:26em;">Home staging for Auckland properties that deserve to be remembered. Demo website build.</p>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <a href="#services">Full staging</a><a href="#services">Partial staging</a><a href="#services">Consultation</a><a href="#services">Moving support</a>
+      </div>
+      <div>
+        <h4>Work with us</h4>
+        <a href="#audiences">For agents</a><a href="#audiences">For developers</a><a href="#work">Portfolio</a><a href="#process">How it works</a>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <a href="tel:095550190">09 555 0190</a>
+        <a href="mailto:hello@auburnoak.demo">hello@auburnoak.demo</a>
+        <a href="#">Instagram</a>
+      </div>
+    </div>
+    <div class="fine">
+      <span>© 2026 Auburn &amp; Oak — demo template by Web Co-Create. Not a real business.</span>
+      <span>Auckland, New Zealand</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
