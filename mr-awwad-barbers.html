@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mr Awwad Barbers — Since 2009 | Grenada Ave, Auckland</title>
+<meta name="description" content="Mr Awwad Barbers, cutting in Auckland since 2009. Skin fades, classic cuts, beard line-ups and hot towel shaves on Grenada Avenue. Walk-ins welcome, open till 6pm. Ph 022 451 0508.">
+<meta property="og:title" content="Mr Awwad Barbers — Since 2009 · Grenada Ave, Auckland">
+<meta property="og:description" content="17 years of sharp cuts. Skin fades, beard work, hot towel shaves. Walk-ins welcome, open till 6pm.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<style>
+  :root {
+    --wood: #171310;
+    --wood2: #241d16;
+    --wood3: #2e261d;
+    --gold: #d4a94e;
+    --gold-soft: #e6c87e;
+    --cream: #f2ead9;
+    --hedge: #22392c;
+    --cape-red: #b33a3a;
+    --cape-blue: #3a6cb3;
+    --muted: #a89a85;
+    --line: rgba(212,169,78,.22);
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { font-family:'Segoe UI', system-ui, sans-serif; background:var(--wood); color:var(--cream); line-height:1.65; }
+  .wrap { width:min(1060px,92%); margin:0 auto; }
+  h1,h2,h3 { font-family:Georgia, serif; font-weight:400; line-height:1.15; }
+
+  .pole { height:6px; background:repeating-linear-gradient(-45deg, var(--cape-red) 0 14px, #f2ead9 14px 28px, var(--cape-blue) 28px 42px, #f2ead9 42px 56px); animation:slide 3s linear infinite; }
+  @keyframes slide { to { background-position:56px 0; } }
+
+  header.site { position:sticky; top:0; z-index:50; background:rgba(23,19,16,.96); backdrop-filter:blur(10px); border-bottom:1px solid var(--line); }
+  .nav { display:flex; align-items:center; justify-content:space-between; padding:14px 0; }
+  .brand { display:flex; align-items:center; gap:12px; text-decoration:none; }
+  .brand .mark { width:44px; height:44px; border-radius:50%; background:radial-gradient(circle at 35% 30%, #3a3128, #171310 70%); border:2px solid var(--gold); display:grid; place-items:center; font-size:1.15rem; }
+  .brand b { font-family:Georgia,serif; color:var(--gold-soft); font-size:1.3rem; display:block; line-height:1; letter-spacing:.03em; }
+  .brand small { color:var(--muted); font-size:.62rem; letter-spacing:.34em; text-transform:uppercase; display:block; margin-top:3px; }
+  nav.links { display:flex; gap:26px; }
+  nav.links a { color:var(--muted); text-decoration:none; font-size:.88rem; font-weight:600; letter-spacing:.05em; text-transform:uppercase; transition:.15s; }
+  nav.links a:hover { color:var(--gold-soft); }
+  .btn { display:inline-block; background:var(--gold); color:#171310; text-decoration:none; font-weight:800; padding:14px 30px; border-radius:4px; border:none; cursor:pointer; font-size:.95rem; letter-spacing:.03em; transition:.15s; }
+  .btn:hover { background:var(--gold-soft); transform:translateY(-2px); }
+  .btn.line { background:transparent; color:var(--gold-soft); border:1.5px solid var(--gold); }
+  .btn.line:hover { background:rgba(212,169,78,.12); }
+
+  .hero { position:relative; padding:0 0 74px; overflow:hidden; }
+  .hedge { height:52px; background:radial-gradient(circle at 8px 10px, #2e4634 3px, transparent 4px), radial-gradient(circle at 22px 26px, #3a5440 3px, transparent 4px), radial-gradient(circle at 38px 8px, #263d2e 3px, transparent 4px), var(--hedge); background-size:44px 36px; opacity:.9; }
+  .hero-inner { background:
+      repeating-linear-gradient(90deg, rgba(255,255,255,.025) 0 2px, transparent 2px 26px),
+      linear-gradient(180deg, var(--wood2), var(--wood)); padding:70px 0 66px; text-align:center; position:relative; }
+  .neon { font-family:Georgia,serif; font-style:italic; font-size:clamp(1.4rem,3vw,2rem); color:var(--gold-soft); text-shadow:0 0 14px rgba(212,169,78,.55), 0 0 40px rgba(212,169,78,.25); margin-bottom:18px; }
+  .badge { display:inline-flex; align-items:center; gap:9px; border:1px solid var(--gold); color:var(--gold-soft); border-radius:999px; padding:8px 20px; font-size:.85rem; font-weight:600; margin-bottom:24px; }
+  .badge::before { content:""; width:9px; height:9px; border-radius:50%; background:var(--gold); animation:pulse 2s infinite; }
+  .badge.closed { border-color:var(--muted); color:var(--muted); }
+  .badge.closed::before { background:var(--muted); animation:none; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.3} }
+  h1 { color:#fff; font-size:clamp(2.3rem,5vw,3.7rem); margin-bottom:14px; }
+  h1 em { font-style:italic; color:var(--gold); }
+  .since { color:var(--gold); letter-spacing:.4em; text-transform:uppercase; font-size:.8rem; font-weight:700; margin-bottom:22px; }
+  .lede { color:var(--muted); max-width:36em; margin:0 auto 30px; font-size:1.05rem; }
+  .cta-row { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin-bottom:26px; }
+  .hero-facts { display:flex; gap:28px; justify-content:center; flex-wrap:wrap; color:var(--muted); font-size:.9rem; }
+  .hero-facts b { color:var(--gold-soft); font-weight:700; }
+
+  section { padding:72px 0; }
+  .head { text-align:center; max-width:46em; margin:0 auto 44px; }
+  .kicker { color:var(--gold); letter-spacing:.3em; text-transform:uppercase; font-size:.74rem; font-weight:700; display:block; margin-bottom:14px; }
+  .head h2 { color:#fff; font-size:clamp(1.8rem,3.2vw,2.5rem); margin-bottom:10px; }
+  .head p { color:var(--muted); }
+
+  .hours-card { max-width:620px; margin:0 auto 20px; background:var(--wood2); border:1px solid var(--line); border-radius:6px; padding:28px 32px; }
+  .status { text-align:center; font-weight:700; color:var(--gold-soft); margin-bottom:18px; font-size:1.02rem; }
+  .hours-table { width:100%; border-collapse:collapse; }
+  .hours-table td { padding:10px 4px; border-bottom:1px solid rgba(212,169,78,.12); font-size:.95rem; color:var(--muted); }
+  .hours-table tr:last-child td { border-bottom:none; }
+  .hours-table td:last-child { text-align:right; color:var(--cream); font-weight:600; }
+  .tz { text-align:center; font-size:.76rem; color:var(--muted); margin-top:14px; }
+  .maplink { display:block; text-align:center; margin:22px 0 0; color:var(--gold-soft); text-decoration:none; font-size:.92rem; }
+  .maplink:hover { text-decoration:underline; }
+
+  .svc-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+  .svc { background:var(--wood2); border:1px solid rgba(212,169,78,.18); border-radius:6px; overflow:hidden; transition:.2s; display:flex; flex-direction:column; }
+  .svc:hover { transform:translateY(-5px); border-color:var(--gold); }
+  .svc .img { height:120px; position:relative; }
+  .i1 { background:repeating-linear-gradient(90deg,#2a2119 0 8px,#241c15 8px 16px), linear-gradient(120deg,#3a2f22,#1c1610); }
+  .i2 { background:radial-gradient(circle at 70% 30%, rgba(212,169,78,.35), transparent 50%), linear-gradient(160deg,#2e261d,#171310); }
+  .i3 { background:linear-gradient(140deg,#33291d,#4a3a26 55%,#241c15); }
+  .svc-body { padding:20px 22px 22px; flex:1; display:flex; flex-direction:column; }
+  .svc-body h3 { color:#fff; font-size:1.12rem; margin-bottom:4px; }
+  .svc-body .meta { color:var(--muted); font-size:.84rem; margin-bottom:14px; }
+  .svc-body .meta b { color:var(--gold); font-weight:800; font-size:1.05rem; }
+  .svc-body .btn { margin-top:auto; text-align:center; padding:11px 10px; font-size:.88rem; }
+  .note { text-align:center; color:var(--muted); font-size:.85rem; margin-top:24px; }
+
+  .team { display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+  .barber { background:var(--wood2); border:1px solid rgba(212,169,78,.18); border-radius:6px; padding:30px 24px; text-align:center; transition:.2s; }
+  .barber:hover { border-color:var(--gold); transform:translateY(-4px); }
+  .barber .face { width:84px; height:84px; margin:0 auto 16px; border-radius:50%; background:radial-gradient(circle at 35% 30%, #3a3128, #171310 75%); border:2px solid var(--gold); display:grid; place-items:center; font-size:2.1rem; }
+  .barber h3 { color:#fff; font-size:1.12rem; margin-bottom:4px; }
+  .barber .role { color:var(--gold); font-size:.72rem; font-weight:800; letter-spacing:.18em; text-transform:uppercase; display:block; margin-bottom:10px; }
+  .barber p { color:var(--muted); font-size:.9rem; }
+
+  .about-split { display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center; }
+  .about-visual { height:380px; border-radius:6px; background:
+      radial-gradient(circle at 20% 12%, rgba(46,70,52,.8), transparent 26%),
+      repeating-linear-gradient(90deg, #2a2119 0 10px, #221b14 10px 22px),
+      linear-gradient(160deg, #2e261d, #171310);
+      position:relative; overflow:hidden; }
+  .about-visual::after { content:"Awwad"; position:absolute; bottom:26px; left:50%; transform:translateX(-50%); font-family:Georgia,serif; font-style:italic; font-size:2rem; color:var(--gold-soft); text-shadow:0 0 18px rgba(212,169,78,.7), 0 0 46px rgba(212,169,78,.3); }
+  .about-copy h2 { color:#fff; font-size:clamp(1.8rem,3.2vw,2.5rem); margin-bottom:16px; }
+  .about-copy p { color:var(--muted); margin-bottom:16px; }
+  .since-badge { display:inline-block; border:1.5px solid var(--gold); color:var(--gold-soft); border-radius:4px; padding:10px 22px; font-weight:800; letter-spacing:.22em; font-size:.85rem; margin-top:8px; }
+
+  .revs { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+  .rev { background:var(--wood2); border:1px solid rgba(212,169,78,.15); border-radius:6px; padding:24px; font-size:.92rem; color:var(--muted); }
+  .rev .stars { color:var(--gold); letter-spacing:2px; margin-bottom:8px; }
+  .rev b { color:#fff; display:block; margin-bottom:6px; }
+
+  .book-band { background:var(--wood2); border-top:1px solid var(--line); }
+  .book-grid { display:grid; grid-template-columns:1fr 1.15fr; gap:48px; align-items:start; }
+  form.book { background:var(--wood); border:1px solid rgba(212,169,78,.3); border-radius:6px; padding:32px; display:grid; gap:14px; }
+  .book label { color:var(--gold-soft); font-size:.72rem; font-weight:800; text-transform:uppercase; letter-spacing:.12em; }
+  .book input, .book select { width:100%; padding:13px 15px; background:var(--wood2); border:1.5px solid rgba(212,169,78,.3); color:var(--cream); border-radius:4px; font-size:.97rem; font-family:inherit; }
+  .book .two { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+  .side-note { background:var(--wood); border:1px solid rgba(212,169,78,.2); border-radius:6px; padding:26px; margin-bottom:16px; }
+  .side-note h3 { color:#fff; margin-bottom:8px; font-size:1.05rem; }
+  .side-note p { color:var(--muted); font-size:.92rem; }
+
+  footer { border-top:1px solid var(--line); padding:40px 0 28px; color:var(--muted); font-size:.88rem; }
+  .foot-flex { display:flex; justify-content:space-between; flex-wrap:wrap; gap:14px; margin-bottom:14px; }
+  footer a { color:var(--gold-soft); text-decoration:none; }
+  .fine { border-top:1px solid rgba(255,255,255,.07); padding-top:14px; font-size:.78rem; }
+
+  .reveal { opacity:0; transform:translateY(24px); transition:opacity .7s ease, transform .7s ease; }
+  .reveal.visible { opacity:1; transform:none; }
+  @media (prefers-reduced-motion:reduce) { .reveal{opacity:1;transform:none;transition:none} }
+
+  @media(max-width:880px){ nav.links{display:none;} .svc-grid,.team,.revs{grid-template-columns:1fr;} .about-split,.book-grid{grid-template-columns:1fr;gap:36px;} .book .two{grid-template-columns:1fr;} }
+</style>
+</head>
+<body>
+
+<div class="pole"></div>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="#">
+      <span class="mark">💈</span>
+      <span><b>MR. AWWAD</b><small>Barbers · Since 2009</small></span>
+    </a>
+    <nav class="links"><a href="#services">Hair Styles</a><a href="#barbers">Barbers</a><a href="#about">About</a><a href="#hours">Hours</a></nav>
+    <a class="btn" href="#book" style="padding:11px 22px; font-size:.88rem;">Book a Chair</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hedge"></div>
+  <div class="hero-inner">
+    <div class="wrap">
+      <p class="neon">✂️ Awwad ✂️</p>
+      <span class="badge" id="openBadge">Checking hours…</span>
+      <h1>Seventeen years of <em>sharp cuts.</em></h1>
+      <p class="since">Since 2009 · Grenada Avenue, Auckland</p>
+      <p class="lede">The corner barbershop locals don't switch from. Skin fades, classic scissor cuts, beard line-ups and hot towel finishes — walk in or book your chair below.</p>
+      <div class="cta-row">
+        <a class="btn" href="#book">Book a Chair</a>
+        <a class="btn line" href="tel:0224510508">📞 022 451 0508</a>
+      </div>
+      <div class="hero-facts">
+        <span><b>Since 2009</b></span>
+        <span><b>Walk-ins</b> welcome</span>
+        <span><b>All hair</b> types &amp; ages</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="hours">
+  <div class="wrap">
+    <div class="head">
+      <span class="kicker">Opening Hours</span>
+      <h2>Find Your Moment in the Chair</h2>
+      <p>Hours to be confirmed with the shop before launch (demo build).</p>
+    </div>
+    <div class="hours-card">
+      <p class="status" id="statusLine">Checking NZ time…</p>
+      <table class="hours-table">
+        <tr><td>Monday</td><td>9:30am – 6:00pm</td></tr>
+        <tr><td>Tuesday</td><td>9:30am – 6:00pm</td></tr>
+        <tr><td>Wednesday</td><td>9:30am – 6:00pm</td></tr>
+        <tr><td>Thursday</td><td>9:30am – 6:00pm</td></tr>
+        <tr><td>Friday</td><td>9:30am – 6:00pm</td></tr>
+        <tr><td>Saturday</td><td>9:00am – 6:00pm</td></tr>
+        <tr><td>Sunday</td><td>Closed</td></tr>
+      </table>
+      <p class="tz">Time zone: New Zealand Standard Time</p>
+    </div>
+    <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=1+Grenada+Avenue+Auckland+0620" target="_blank" rel="noopener">📍 1 Grenada Avenue, Auckland 0620 — open in Google Maps →</a>
+  </div>
+</section>
+
+<section id="services" style="background:var(--wood2); border-block:1px solid var(--line);">
+  <div class="wrap">
+    <div class="head">
+      <span class="kicker">Hair Styles</span>
+      <h2>Pick Your Cut</h2>
+      <p>Every service includes a proper finish. Hit Book on any style and it's pre-filled below.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc"><div class="img i1"></div><div class="svc-body"><h3>Skin Fade</h3><p class="meta">40 mins · <b>$30</b></p><p style="color:var(--muted);font-size:.9rem;margin-bottom:14px;">Blended clean to the skin — our most requested cut.</p><button class="btn" onclick="pick('Skin Fade')">Book This</button></div></div>
+      <div class="svc"><div class="img i2"></div><div class="svc-body"><h3>Zero Fade</h3><p class="meta">40 mins · <b>$35</b></p><p style="color:var(--muted);font-size:.9rem;margin-bottom:14px;">High-contrast zero fade, sharp lines all round.</p><button class="btn" onclick="pick('Zero Fade')">Book This</button></div></div>
+      <div class="svc"><div class="img i3"></div><div class="svc-body"><h3>Classic Cut</h3><p class="meta">30 mins · <b>$25</b></p><p style="color:var(--muted);font-size:.9rem;margin-bottom:14px;">Scissor or clipper, finished and styled properly.</p><button class="btn" onclick="pick('Classic Cut')">Book This</button></div></div>
+      <div class="svc"><div class="img i2"></div><div class="svc-body"><h3>Cut + Beard Combo</h3><p class="meta">50 mins · <b>$40</b></p><p style="color:var(--muted);font-size:.9rem;margin-bottom:14px;">The full refresh — cut, beard shape and razor line-up.</p><button class="btn" onclick="pick('Cut + Beard Combo')">Book This</button></div></div>
+      <div class="svc"><div class="img i3"></div><div class="svc-body"><h3>Beard Trim &amp; Line-Up</h3><p class="meta">15 mins · <b>$15</b></p><p style="color:var(--muted);font-size:.9rem;margin-bottom:14px;">Razor-sharp edges, shaped to your face.</p><button class="btn" onclick="pick('Beard Trim &amp; Line-Up')">Book This</button></div></div>
+      <div class="svc"><div class="img i1"></div><div class="svc-body"><h3>Kids Cut</h3><p class="meta">25 mins · <b>$18</b></p><p style="color:var(--muted);font-size:.9rem;margin-bottom:14px;">Under 12s — patient with first-timers, quick with the wrigglers.</p><button class="btn" onclick="pick('Kids Cut')">Book This</button></div></div>
+      <div class="svc"><div class="img i3"></div><div class="svc-body"><h3>Hot Towel Shave</h3><p class="meta">30 mins · <b>$25</b></p><p style="color:var(--muted);font-size:.9rem;margin-bottom:14px;">Old school, properly done. Warm towel, straight razor, clean finish.</p><button class="btn" onclick="pick('Hot Towel Shave')">Book This</button></div></div>
+      <div class="svc"><div class="img i2"></div><div class="svc-body"><h3>Seniors Cut</h3><p class="meta">20 mins · <b>$20</b></p><p style="color:var(--muted);font-size:.9rem;margin-bottom:14px;">Neat, classic and unhurried.</p><button class="btn" onclick="pick('Seniors Cut')">Book This</button></div></div>
+      <div class="svc"><div class="img i1"></div><div class="svc-body"><h3>All-Over Clipper Cut</h3><p class="meta">20 mins · <b>$20</b></p><p style="color:var(--muted);font-size:.9rem;margin-bottom:14px;">One length, one grade, done clean. In and out.</p><button class="btn" onclick="pick('All-Over Clipper Cut')">Book This</button></div></div>
+    </div>
+    <p class="note">Sample prices shown — final prices confirmed with the shop. (Demo build.)</p>
+  </div>
+</section>
+
+<section id="barbers">
+  <div class="wrap">
+    <div class="head">
+      <span class="kicker">The Barbers</span>
+      <h2>The Chairs You'll Know By Name</h2>
+      <p>Team profiles are placeholders — real names and bios go in before launch.</p>
+    </div>
+    <div class="team">
+      <div class="barber"><div class="face">🧔</div><h3>Mr Awwad</h3><span class="role">Owner · Master Barber</span><p>Cutting since 2009. The hands that built the shop's reputation, one fade at a time.</p></div>
+      <div class="barber"><div class="face">💈</div><h3>Barber Two</h3><span class="role">Senior Barber</span><p>Fades and beard work specialist. Placeholder profile — your real team member goes here.</p></div>
+      <div class="barber"><div class="face">💈</div><h3>Barber Three</h3><span class="role">Barber</span><p>Classic cuts and kids' chairs. Placeholder profile — your real team member goes here.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="about" style="background:var(--wood2); border-block:1px solid var(--line);">
+  <div class="wrap about-split">
+    <div class="about-visual"></div>
+    <div class="about-copy">
+      <span class="kicker">About</span>
+      <h2>A proper neighbourhood barbershop. Since 2009.</h2>
+      <p>Seventeen years on the same chairs, same street, same standard: a sharp cut at a fair price, with a bit of banter included. Men's grooming specialists — fades, beards, classic cuts and traditional hot towel shaves.</p>
+      <p>Walk in when you like, or book a chair and skip the wait. Quality haircuts, a proper environment, and a shop that knows its regulars by name.</p>
+      <span class="since-badge">EST. 2009 · AUCKLAND</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="head"><span class="kicker">Word of Mouth</span><h2>What Locals Say</h2><p>Sample reviews shown for layout purposes.</p></div>
+    <div class="revs">
+      <div class="rev"><div class="stars">★★★★★</div><b>"Been going since 2012"</b>"Moved suburbs, still drive back. Nobody else touches my head. Best fade on this side of the bridge."</div>
+      <div class="rev"><div class="stars">★★★★★</div><b>"Took my boy for his first cut"</b>"Patient, quick, and made it a good memory instead of a meltdown. We're regulars now."</div>
+      <div class="rev"><div class="stars">★★★★☆</div><b>"Walk-in at 5:20, no fuss"</b>"Near closing and still took the time to do it right. That's why the shop's been there 17 years."</div>
+    </div>
+  </div>
+</section>
+
+<section class="book-band" id="book">
+  <div class="wrap">
+    <div class="head"><span class="kicker">Book a Chair</span><h2>Reserve Your Spot</h2><p>Send a request and we'll text back to confirm. Walk-ins still welcome anytime.</p></div>
+    <div class="book-grid">
+      <div>
+        <div class="side-note">
+          <h3>📞 Prefer to talk?</h3>
+          <p>Call or text <a href="tel:0224510508" style="color:var(--gold-soft);">022 451 0508</a> — if the clippers are running, leave a text and we'll get back between cuts.</p>
+        </div>
+        <div class="side-note">
+          <h3>🚶 Walk-ins</h3>
+          <p>Always welcome. Last walk-in taken 30 minutes before close. EFTPOS and cash.</p>
+        </div>
+        <div class="side-note">
+          <h3>📍 Where</h3>
+          <p>1 Grenada Avenue, Auckland 0620 — free parking out front, next to the superette.</p>
+        </div>
+      </div>
+      <form class="book" action="https://formspree.io/f/mdenvrwl" method="POST">
+        <input type="hidden" name="_subject" value="BOOKING REQUEST - Mr Awwad Barbers">
+        <div class="two">
+          <div><label>Your Name</label><input type="text" name="name" placeholder="Sam" required></div>
+          <div><label>Phone</label><input type="tel" name="phone" placeholder="021 555 0000" required></div>
+        </div>
+        <div><label>Hair Style</label>
+          <select name="service" id="serviceSelect">
+            <option>Skin Fade</option>
+            <option>Zero Fade</option>
+            <option>Classic Cut</option>
+            <option>Cut + Beard Combo</option>
+            <option>Beard Trim &amp; Line-Up</option>
+            <option>Kids Cut</option>
+            <option>Hot Towel Shave</option>
+            <option>Seniors Cut</option>
+            <option>All-Over Clipper Cut</option>
+            <option>Not sure — help me decide</option>
+          </select>
+        </div>
+        <div class="two">
+          <div><label>Preferred Day</label>
+            <select name="day"><option>Today</option><option>Tomorrow</option><option>This week</option><option>This weekend</option></select>
+          </div>
+          <div><label>Preferred Time</label>
+            <select name="time"><option>Morning</option><option>Midday</option><option>Afternoon</option><option>Right before close</option></select>
+          </div>
+        </div>
+        <button class="btn" type="submit" style="width:100%; text-align:center;">Request My Chair</button>
+        <p style="font-size:.8rem; color:var(--muted); text-align:center; margin:0;">We text back to confirm — nothing is charged online.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<div class="pole"></div>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-flex">
+      <div><b style="color:var(--gold-soft); font-family:Georgia,serif; font-size:1.15rem;">MR. AWWAD BARBERS</b><br>1 Grenada Avenue, Auckland 0620 · 022 451 0508<br>Walk-ins welcome · Open till 6pm · Since 2009</div>
+      <div><a href="#services">Hair Styles</a> · <a href="#barbers">Barbers</a> · <a href="#book">Book</a> · <a href="#hours">Hours</a></div>
+    </div>
+    <div class="fine">Demo website build · © 2026 Mr Awwad Barbers — template by Web Co-Create</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var b=document.getElementById('openBadge'), s=document.getElementById('statusLine');
+  function nz(){
+    try{
+      var p={};
+      new Intl.DateTimeFormat('en-NZ',{timeZone:'Pacific/Auckland',weekday:'short',hour:'numeric',minute:'numeric',hour12:false}).formatToParts(new Date()).forEach(function(x){p[x.type]=x.value});
+      return {d:p.weekday,m:(parseInt(p.hour,10)*60)+parseInt(p.minute,10)};
+    }catch(e){return null}
+  }
+  var close=1080, open={Mon:570,Tue:570,Wed:570,Thu:570,Fri:570,Sat:540}, days=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+  function run(){
+    var t=nz(); if(!t){b.textContent='Walk-ins welcome · till 6pm'; s.textContent='Hours shown in NZ time'; return}
+    var di=days.indexOf(t.d), today=days[di], tomorrow=days[(di+1)%7], o=open[today];
+    if(o!==undefined&&t.m>=o&&t.m<close){b.textContent='Open now · Closes 6:00pm today'; s.textContent='Open now · Closes 6:00pm today';}
+    else{
+      b.classList.add('closed');
+      var no=open[tomorrow];
+      var when=(t.m>=close||o===undefined)?'tomorrow':'in the morning';
+      var txt='Closed now · Opens '+(no===540?'9:00am':'9:30am')+' '+when;
+      b.textContent=txt; s.textContent=txt;
+    }
+  }
+  run();
+  window.pick=function(name){
+    var sel=document.getElementById('serviceSelect');
+    for(var i=0;i<sel.options.length;i++){ if(sel.options[i].text.replace('&amp;','&')===name){ sel.selectedIndex=i; break; } }
+    document.getElementById('book').scrollIntoView({behavior:'smooth'});
+  };
+  var sel='.head,.svc,.barber,.rev,.side-note,.book,.about-visual,.about-copy,.hours-card,.hero .neon,.hero .badge,.hero h1,.hero .since,.hero .lede,.cta-row,.hero-facts';
+  var list=document.querySelectorAll(sel);
+  list.forEach(function(e){e.classList.add('reveal')});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('visible');io.unobserve(x.target)}})},{threshold:.12});
+    list.forEach(function(e){io.observe(e)});
+  } else { list.forEach(function(e){e.classList.add('visible')}); }
+})();
+</script>
+</body>
+</html>
