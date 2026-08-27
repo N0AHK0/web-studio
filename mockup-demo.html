@@ -1,0 +1,285 @@
+<![CDATA[<!DOCTYPE html>
+<html lang="en-NZ">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tide & Tail — Mobile Dog Grooming · Browns Bay, Auckland</title>
+<meta name="description" content="Tide & Tail mobile dog grooming comes to your driveway in Browns Bay, Rothesay Bay and Long Bay. Full groom, wash & tidy, puppy first-timers. Book online.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<style>
+  :root {
+    --paper: #faf7f1;
+    --paper2: #f1ece1;
+    --ink: #23201b;
+    --muted: #6f675a;
+    --sea: #2e6f6a;
+    --sea-deep: #1f4f4b;
+    --sand: #d9c9a8;
+    --line: rgba(35,32,27,.14);
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; overflow-x:clip; }
+  body { overflow-x:clip; font-family:'Inter', system-ui, -apple-system, sans-serif; background:var(--paper); color:var(--ink); line-height:1.65; }
+  .wrap { width:min(980px,92%); margin:0 auto; }
+  h1,h2,h3 { font-family:'Fraunces', Georgia, serif; font-weight:600; line-height:1.12; overflow-wrap:anywhere; }
+  a { color:var(--sea-deep); }
+
+  /* top bar */
+  .topbar { background:var(--ink); color:var(--paper); font-size:.82rem; }
+  .topbar .wrap { display:flex; justify-content:space-between; gap:12px; padding:9px 0; flex-wrap:wrap; }
+  .topbar b { color:var(--sand); }
+
+  header.site { position:sticky; top:0; z-index:50; background:rgba(250,247,241,.94); backdrop-filter:blur(8px); border-bottom:1px solid var(--line); }
+  .nav { display:flex; align-items:center; justify-content:space-between; padding:14px 0; gap:14px; }
+  .brand { display:flex; align-items:center; gap:11px; text-decoration:none; color:var(--ink); }
+  .brand .mark { width:42px; height:42px; border-radius:50%; background:var(--sea); color:var(--paper); display:grid; place-items:center; font-size:1.2rem; }
+  .brand b { font-family:'Fraunces',Georgia,serif; font-size:1.22rem; display:block; line-height:1.05; }
+  .brand small { color:var(--muted); font-size:.66rem; letter-spacing:.28em; text-transform:uppercase; }
+  nav.links { display:flex; gap:22px; }
+  nav.links a { color:var(--muted); text-decoration:none; font-size:.86rem; font-weight:600; }
+  nav.links a:hover { color:var(--sea-deep); }
+  .btn { display:inline-block; background:var(--sea); color:#fff; text-decoration:none; font-weight:700; padding:13px 26px; border-radius:999px; border:none; cursor:pointer; font-size:.92rem; transition:.15s; }
+  .btn:hover { background:var(--sea-deep); transform:translateY(-2px); }
+  .btn.ghost { background:transparent; color:var(--sea-deep); border:1.5px solid var(--sea); }
+  .btn.ghost:hover { background:rgba(46,111,106,.08); }
+
+  /* quote-led hero */
+  .hero { padding:84px 0 72px; background:
+      radial-gradient(circle at 88% 8%, rgba(217,201,168,.5), transparent 34%),
+      radial-gradient(circle at 4% 90%, rgba(46,111,106,.09), transparent 40%),
+      var(--paper); border-bottom:1px solid var(--line); }
+  .hero blockquote { font-family:'Fraunces',Georgia,serif; font-size:clamp(1.7rem,4.4vw,3rem); font-weight:500; max-width:21em; line-height:1.22; }
+  .hero blockquote span { color:var(--sea); }
+  .hero .attrib { margin-top:18px; color:var(--muted); font-size:.95rem; }
+  .hero .attrib b { color:var(--ink); }
+  .hero-cta { margin-top:34px; display:flex; gap:14px; flex-wrap:wrap; align-items:center; }
+  .hero-cta .tel { font-weight:700; }
+  .service-area { margin-top:26px; color:var(--muted); font-size:.88rem; }
+  .service-area b { color:var(--sea-deep); }
+
+  /* how it works — numbered editorial list, not cards */
+  .how { padding:72px 0; }
+  .kicker { color:var(--sea); letter-spacing:.3em; text-transform:uppercase; font-size:.72rem; font-weight:700; display:block; margin-bottom:12px; }
+  .how h2 { font-size:clamp(1.7rem,3vw,2.3rem); margin-bottom:36px; }
+  .steps { display:grid; gap:0; }
+  .step { display:grid; grid-template-columns:74px 1fr; gap:22px; padding:26px 0; border-top:1px solid var(--line); }
+  .step:last-child { border-bottom:1px solid var(--line); }
+  .step .num { font-family:'Fraunces',Georgia,serif; font-size:2.4rem; color:var(--sand); font-weight:600; line-height:1; }
+  .step h3 { font-size:1.15rem; margin-bottom:6px; }
+  .step p { color:var(--muted); max-width:44em; }
+
+  /* menu-led price list */
+  .menu { background:var(--paper2); border-block:1px solid var(--line); padding:72px 0; }
+  .menu .head { max-width:46em; margin-bottom:36px; }
+  .menu h2 { font-size:clamp(1.7rem,3vw,2.3rem); margin-bottom:8px; }
+  .menu .head p { color:var(--muted); }
+  .menu-list { max-width:640px; margin:0 auto; }
+  .dish { display:flex; justify-content:space-between; align-items:baseline; gap:16px; padding:15px 2px; border-bottom:1px dashed var(--line); }
+  .dish .n { font-weight:600; }
+  .dish .d { display:block; color:var(--muted); font-size:.88rem; font-weight:400; }
+  .dish .p { font-family:'Fraunces',Georgia,serif; font-weight:600; white-space:nowrap; color:var(--sea-deep); }
+  .menu-note { text-align:center; color:var(--muted); font-size:.85rem; margin-top:22px; }
+
+  /* split about */
+  .about { padding:72px 0; }
+  .about .grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:52px; align-items:center; }
+  .about .visual { height:340px; border-radius:10px; background:
+      radial-gradient(circle at 30% 30%, rgba(46,111,106,.25), transparent 45%),
+      repeating-linear-gradient(0deg, rgba(35,32,27,.05) 0 1px, transparent 1px 14px),
+      linear-gradient(150deg, #e7dfd0, #f4efe4); border:1px solid var(--line); position:relative; overflow:hidden; }
+  .about .visual::after { content:"Browns Bay · est. 2021"; position:absolute; bottom:20px; left:22px; font-family:'Fraunces',Georgia,serif; font-size:1.05rem; color:var(--sea-deep); }
+  .about h2 { font-size:clamp(1.7rem,3vw,2.3rem); margin-bottom:16px; }
+  .about p { color:var(--muted); margin-bottom:14px; }
+  .chips { display:flex; gap:10px; flex-wrap:wrap; margin-top:8px; }
+  .chip { border:1px solid var(--sea); color:var(--sea-deep); border-radius:999px; padding:7px 16px; font-size:.82rem; font-weight:600; }
+
+  /* booking */
+  .book { background:var(--ink); color:var(--paper); padding:72px 0; }
+  .book .kicker { color:var(--sand); }
+  .book h2 { color:#fff; font-size:clamp(1.7rem,3vw,2.3rem); margin-bottom:10px; }
+  .book .head { max-width:44em; margin-bottom:36px; }
+  .book .head p { color:rgba(250,247,241,.65); }
+  .book .grid { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.15fr); gap:44px; align-items:start; }
+  .book form { background:rgba(250,247,241,.06); border:1px solid rgba(250,247,241,.16); border-radius:10px; padding:30px; display:grid; gap:14px; }
+  .book label { font-size:.72rem; font-weight:700; text-transform:uppercase; letter-spacing:.12em; color:var(--sand); }
+  .book input, .book select { width:100%; padding:12px 14px; background:rgba(250,247,241,.08); border:1.5px solid rgba(250,247,241,.22); color:var(--paper); border-radius:6px; font-size:.96rem; font-family:inherit; }
+  .book .two { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+  .book .btn { width:100%; text-align:center; background:var(--sand); color:var(--ink); }
+  .book .btn:hover { background:#e6d9bd; }
+  .fine-print { font-size:.8rem; color:rgba(250,247,241,.55); text-align:center; margin:0; }
+  .side h3 { color:#fff; font-size:1.05rem; margin-bottom:8px; }
+  .side p { color:rgba(250,247,241,.65); font-size:.92rem; margin-bottom:22px; }
+  .side a { color:var(--sand); }
+
+  footer { padding:36px 0 26px; color:var(--muted); font-size:.86rem; }
+  .foot-flex { display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; margin-bottom:12px; }
+  .fine { border-top:1px solid var(--line); padding-top:14px; font-size:.78rem; }
+
+  .reveal { opacity:0; transform:translateY(22px); transition:opacity .7s ease, transform .7s ease; }
+  .reveal.visible { opacity:1; transform:none; }
+  @media (prefers-reduced-motion:reduce) { .reveal{opacity:1;transform:none;transition:none} }
+
+  @media(max-width:820px){
+    nav.links{display:none}
+    .about .grid,.book .grid{grid-template-columns:1fr;gap:34px}
+    .book .two{grid-template-columns:1fr}
+    .step{grid-template-columns:52px 1fr;gap:14px}
+    .step .num{font-size:1.8rem}
+  }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..700&family=Inter:wght@400..800&display=swap" rel="stylesheet">
+<style>
+:focus-visible{outline:2px solid currentColor;outline-offset:3px;border-radius:2px}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.045;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E")}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <span>Serving <b>Browns Bay · Rothesay Bay · Long Bay · Okura</b></span>
+    <span>Mon–Sat · <b>021 555 0192</b></span>
+  </div>
+</div>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="#">
+      <span class="mark">🐕</span>
+      <span><b>Tide & Tail</b><small>Mobile Dog Grooming</small></span>
+    </a>
+    <nav class="links" aria-label="Main"><a href="#how">How it works</a><a href="#prices">Prices</a><a href="#about">About</a></nav>
+    <a class="btn" href="#book" style="padding:11px 22px;font-size:.86rem;">Book a groom</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <blockquote>“The van pulls up, the dog comes back <span>smelling like the coast,</span> and I didn’t leave the house.”</blockquote>
+    <p class="attrib">— <b>Kirsty M.</b>, Rothesay Bay · sample review shown for layout purposes</p>
+    <div class="hero-cta">
+      <a class="btn" href="#book">Book your driveway slot</a>
+      <a class="btn ghost" href="tel:0215550192">Call 021 555 0192</a>
+    </div>
+    <p class="service-area">Fully equipped mobile salon · <b>we come to you</b> · rain or shine, we groom inside the van.</p>
+  </div>
+</section>
+
+<section class="how" id="how">
+  <div class="wrap">
+    <span class="kicker">How it works</span>
+    <h2>Your driveway, our salon.</h2>
+    <div class="steps">
+      <div class="step"><span class="num">01</span><div><h3>Book a slot</h3><p>Pick a day and a two-hour window online or by text. We confirm the exact arrival time the night before.</p></div></div>
+      <div class="step"><span class="num">02</span><div><h3>We park at your place</h3><p>The van has its own warm water, power and hydro-bath. All we need is curb space — nothing from your house.</p></div></div>
+      <div class="step"><span class="num">03</span><div><h3>Groom, dry, done</h3><p>Wash, clip, nails, ears, full blow-dry and a spritz of dog-safe cologne. Most grooms take 60–90 minutes.</p></div></div>
+      <div class="step"><span class="num">04</span><div><h3>One happy dog</h3><p>No car stress, no cage time, no waiting around other dogs. Back inside before they know they left.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="menu" id="prices">
+  <div class="wrap">
+    <div class="head">
+      <span class="kicker">Prices</span>
+      <h2>Plain prices, sized by dog.</h2>
+      <p>Quoted before we start — no surprises when the van leaves.</p>
+    </div>
+    <div class="menu-list">
+      <div class="dish"><span class="n">Full Groom — small<span class="d">Wash, clip to breed or your choice, dry, nails, ears. Up to 10kg.</span></span><span class="p">$75</span></div>
+      <div class="dish"><span class="n">Full Groom — medium<span class="d">Same full service, 10–25kg.</span></span><span class="p">$95</span></div>
+      <div class="dish"><span class="n">Full Groom — large<span class="d">25kg+, double-coated breeds welcome.</span></span><span class="p">$120</span></div>
+      <div class="dish"><span class="n">Wash & Tidy<span class="d">Hydro-bath, blow-dry, face/feet/sanitary trim, nails.</span></span><span class="p">from $55</span></div>
+      <div class="dish"><span class="n">Puppy’s First Groom<span class="d">Under 6 months. Slow, gentle, lots of breaks. Price locked for life.</span></span><span class="p">$45</span></div>
+      <div class="dish"><span class="n">Nails & Ears Only<span class="d">15 minutes, done at the van door.</span></span><span class="p">$20</span></div>
+    </div>
+    <p class="menu-note">Sample prices shown for layout purposes — this is a demo mockup, not a real business.</p>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap grid">
+    <div class="visual"></div>
+    <div>
+      <span class="kicker">About</span>
+      <h2>One groomer. One van. Zero cage dryers.</h2>
+      <p>Tide & Tail is a one-person mobile salon based in Browns Bay. Every dog is groomed start-to-finish by the same hands — no hand-offs, no assembly line, no cage dryers ever.</p>
+      <p>We started in 2021 after ten years in a busy salon, because the dogs who hated shops the most were the ones who did best at home.</p>
+      <div class="chips">
+        <span class="chip">Anxious dogs welcome</span>
+        <span class="chip">Senior-dog pace</span>
+        <span class="chip">Dog-safe products only</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="book" id="book">
+  <div class="wrap">
+    <div class="head">
+      <span class="kicker">Book a groom</span>
+      <h2>Grab a driveway slot.</h2>
+      <p>Send a request and we’ll text back to confirm the exact arrival window.</p>
+    </div>
+    <div class="grid">
+      <div class="side">
+        <h3>Prefer to text?</h3>
+        <p>Message <a href="tel:0215550192">021 555 0192</a> with your suburb and dog’s breed — we’ll sort the rest.</p>
+        <h3>Where we go</h3>
+        <p>Browns Bay, Rothesay Bay, Long Bay, Okura and East Coast Bays. Slightly further? Ask — we often can.</p>
+        <h3>Payment</h3>
+        <p>EFTPOS at the van, bank transfer, or cash. Paid when the groom’s done and you’re happy.</p>
+      </div>
+      <form action="https://formspree.io/f/mdenvrwl" method="POST">
+        <input type="hidden" name="_subject" value="BOOKING REQUEST - Tide & Tail (demo)">
+        <div class="two">
+          <div><label>Your name</label><input type="text" name="name" placeholder="Alex" required></div>
+          <div><label>Phone</label><input type="tel" name="phone" placeholder="021 555 0000" required></div>
+        </div>
+        <div class="two">
+          <div><label>Dog’s name</label><input type="text" name="dog" placeholder="Biscuit" required></div>
+          <div><label>Size</label>
+            <select name="size"><option>Small (under 10kg)</option><option>Medium (10–25kg)</option><option>Large (25kg+)</option></select>
+          </div>
+        </div>
+        <div class="two">
+          <div><label>Service</label>
+            <select name="service"><option>Full Groom</option><option>Wash & Tidy</option><option>Puppy’s First Groom</option><option>Nails & Ears Only</option></select>
+          </div>
+          <div><label>Preferred day</label>
+            <select name="day"><option>Weekday morning</option><option>Weekday afternoon</option><option>Saturday</option><option>Flexible</option></select>
+          </div>
+        </div>
+        <button class="btn" type="submit">Request my slot</button>
+        <p class="fine-print">We text back to confirm — nothing is charged online.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-flex">
+      <div><b style="font-family:'Fraunces',Georgia,serif;font-size:1.1rem;">TIDE & TAIL</b><br>Mobile dog grooming · Browns Bay, Auckland<br>Mon–Sat · 021 555 0192</div>
+      <div><a href="#how">How it works</a> · <a href="#prices">Prices</a> · <a href="#book">Book</a></div>
+    </div>
+    <div class="fine">Demo mockup — fictional business, not for publication · built by Web Co-Create</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var sel='.hero blockquote,.hero .attrib,.hero-cta,.service-area,.step,.dish,.about .visual,.about .grid > div:last-child,.book form,.side h3,.side p';
+  var list=document.querySelectorAll(sel);
+  list.forEach(function(e){e.classList.add('reveal')});
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('visible');io.unobserve(x.target)}})},{threshold:.12});
+    list.forEach(function(e){io.observe(e)});
+  } else { list.forEach(function(e){e.classList.add('visible')}); }
+})();
+</script>
+</body>
+</html>
+]]>
